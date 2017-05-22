@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  return knex('1_users')
+  return knex('users')
     .select('*')
     .then((users) => res.json(users))
       .catch((err) => next(err));
@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
-  return knex('1_users')
+  return knex('users')
     .select('*')
     .where('id', id)
     .first()
@@ -23,7 +23,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const newUser = req.body;
-  return knex('1_users')
+  return knex('users')
     .returning('*')
     .insert(newUsers);
     .then(() => res.sendStatus(200))
@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   const id = req.params.id;
   const editUser = req.body;
-  return knex('1_users')
+  return knex('users')
     .returning('*')
     .where('id', id).update(changes)
     .then(() => res.sendStatus(200))
@@ -42,7 +42,7 @@ router.put('/:id', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
-  return knex('1_users')
+  return knex('users')
   .where('id', id).del()
   .then(() => res.sendStatus(200))
   .catch((err) => next(err));
