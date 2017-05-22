@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const api = require('./routes/api');
-const db = require('./db/queries/users');
+// const db = require('./db/queries/users');
 
 const app = express();
 app.use(compression());
