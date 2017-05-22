@@ -21,7 +21,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/', function(req, res, next) {
     knex('messages')
-        .select('id', 'name', 'message')
+        .select('id', 'title', 'body')
         .then(results => {
             // console.log('results:', results);
             res.send(results)
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 router.get('/:id', (req, res, next) => {
     let id = +req.params.id;
     knex('messages')
-        .select('id', 'name', 'message')
+        .select('id', 'title', 'body')
         .where('id', id)
         .then(results => {
             res.render('one-message', {
@@ -51,12 +51,12 @@ router.delete('/:id', (req, res, next) => {
         .del()
         .then(data => {
           let id = data[0].id
-          let name = data[0].name
-          let message = data[0].message
+          let name = data[0].title
+          let message = data[0].body
           res.json({
             id,
-            name,
-            message
+            title,
+            body
           })
         })
 })
