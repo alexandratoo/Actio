@@ -40,7 +40,7 @@ router.delete('/:id', (req, res, next) => {
 
 /* LIST */
 router.get(`/`, (req, res, next) => {
-  db.listEvents()
+  db.listEvent()
   .then((postures) => res.json(postures))
   .catch((err) => next(err));
 });
