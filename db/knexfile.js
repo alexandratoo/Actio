@@ -8,7 +8,7 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/galielo_test'
+    connection: 'postgres://localhost/galileo_test'
   },
   production: {
     client: 'pg',
