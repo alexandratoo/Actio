@@ -5,8 +5,8 @@ const users = require('./users');
 const users = require('./events');
 const express = require('express'); /* eslint-disable new-cap */
 const router = express.Router();    /* eslint-enable new-cap */
-
-router.use('/auth', auth);
+//
+// router.use('/auth', auth);
 router.use('/users', users);
 router.use('/events', events);
 
