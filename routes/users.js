@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   return knex('users')
-    .select('*')
+    .select('first_name', 'last_name', 'email', 'zip', 'profile_pic')
     .then((users) => res.json(users))
       .catch((err) => next(err));
 });
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   return knex('users')
-    .select('*')
+    .select('first_name', 'last_name', 'email', 'zip', 'profile_pic')
     .where('id', id)
     .first()
     .then((user) => res.json(user))
@@ -24,8 +24,8 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const newUser = req.body;
   return knex('users')
-    .returning('*')
-    .insert(newUsers);
+    .returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic'])
+    .insert(newUsers)
     .then(() => res.sendStatus(200))
     .catch((err) => next(err));
 });
@@ -34,7 +34,7 @@ router.put('/:id', (req, res, next) => {
   const id = req.params.id;
   const editUser = req.body;
   return knex('users')
-    .returning('*')
+    .returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic'])
     .where('id', id).update(changes)
     .then(() => res.sendStatus(200))
     .catch((err) => next(err));
