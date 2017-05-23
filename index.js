@@ -1,11 +1,12 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import ReactDOM from 'react-dom'
 import Main from './components/Main'
 
-render((
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-    </Route>
-  </Router>
-), document.getElementById('app'))
+import {BrowserRouter, Route} from 'react-router-dom';
+
+ReactDOM.render(
+  <BrowserRouter>
+  <div className="main">
+    <Route exact path="/" component={Main}></Route>
+  </div>
+</BrowserRouter>, document.getElementById('root'))
