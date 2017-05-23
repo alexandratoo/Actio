@@ -13,8 +13,6 @@ export default class Nav extends Component {
               <li><Link to="/Profile">My Profile</Link></li>
               <li><Link to="/events">Find Events</Link></li>
             </ul>
-            <ul className="nav navbar-nav navbar-right">
-            </ul>
           </div>
         </div>
       </nav>
