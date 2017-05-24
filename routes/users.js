@@ -2,6 +2,7 @@
 
 const knex = require('../knex.js');
 const express = require('express');
+const bcrypt = require('bcrypt');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
@@ -31,15 +32,34 @@ router.get('/:id/events',(req,res,next) =>{
     .innerJoin('messages','events.id','messages.event_id')
     .then((userEvents) => res.json(userEvents))
     .catch((err) => next(err));
-})
+});
 
 router.post('/', (req, res, next) => {
   const newUser = req.body;
-  return knex('users')
-    .returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic'])
-    .insert(newUsers)
-    .then(() => res.sendStatus(200))
-    .catch((err) => next(err));
+
+  let saltRounds = 8;
+  bcrypt.hash(newUser.password, saltRounds)
+  .then((hash) =>{
+    newUser.hashed_password = hash;
+    delete newUser.password
+    knex('users')
+    .returning('*')
+    .insert(newUser)
+    .then((data) =>{
+      console.log(data)
+      delete data.hashed_password;
+      res.json(data);
+    })
+  })
+
+  // return knex('users')
+  //   .returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic'])
+  //   .insert(newUser)
+  //   .then((data) => {
+  //     console.log(data)
+  //     res.json(data);
+  //   })
+  //   .catch((err) => next(err));
 });
 
 router.put('/:id', (req, res, next) => {

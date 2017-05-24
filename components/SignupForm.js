@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
+import {BrowserRouter, Route, withRouter} from 'react-router-dom';
 
 class SignupForm extends Component {
   constructor(props){
@@ -17,10 +18,26 @@ class SignupForm extends Component {
   }
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.state)
+    let newUser ={};
+
+    newUser.first_name = this.state.first_name;
+    newUser.last_name = this.state.last_name;
+    newUser.email = this.state.email;
+    newUser.zip = this.state.zip;
+    newUser.password = this.state.password;
+    newUser.profile_pic = this.state.profile_pic;
+
+    axios.post('/api/users',newUser)
+      .then((data) =>{
+        console.log("all the data",data);
+        this.props.history.push(`/users/${data.data[0].id}`);
+      })
+
+
   }
 
   handleChange(event){
+
     var obj = {}
     obj[event.target.name] = event.target.value;
     this.setState(obj);
@@ -93,4 +110,4 @@ class SignupForm extends Component {
 }
 
 
-export default SignupForm
+export default withRouter(SignupForm)
