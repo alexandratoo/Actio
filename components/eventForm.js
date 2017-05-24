@@ -23,28 +23,39 @@ class EventForm extends Component {
       selected_event: null
     }
 
-    this.onInputChange = this.onInputChange.bind(this);
-
-    function renderCats(category) {
-      return (
-        <option>{category.title}</option>
-      )
-    }
+    axios.get('/api/categories').then((response) => {
+      this.setState( { categories: response.data } )
+    });
 
   }
 
-  onInputChange(event) {
-    this.setState({categories: categories})
+  renderCats(category, key) {
+    return (
+      <option key={key}>{ category.title }</option>
+    )
   }
-
-
-
 
 render() {
   return (
-    <select>
-      {this.props.state.map(this.renderCats)}
-    </select>
+    <div className="container">
+      <div className="row">
+        <select name="catSelect" className="col-sm-4">
+          { this.state.categories.map(this.renderCats) }
+        </select>
+        <select name="skillSelect" className="col-sm-4">
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Master">Master</option>
+        </select>
+        <select name="Distance" className="col-sm-4">
+          <option value="5">5 Miles</option>
+          <option value="10">10 Miles</option>
+          <option value="20">20 Miles</option>
+          <option value="50">50 Miles</option>
+        </select>
+      </div>
+    </div>
   )
 }
 }
