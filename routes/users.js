@@ -21,6 +21,18 @@ router.get('/:id', (req, res, next) => {
       .catch((err) => next(err));
 });
 
+router.get('/:id/events',(req,res,next) =>{
+  const id = req.params.id;
+
+  return knex('events_users')
+    .select('*')
+    .where('user_id', id)
+    .innerJoin('events','events_users.event_id','events.id')
+    .innerJoin('messages','events.id','messages.event_id')
+    .then((userEvents) => res.json(userEvents))
+    .catch((err) => next(err));
+})
+
 router.post('/', (req, res, next) => {
   const newUser = req.body;
   return knex('users')
