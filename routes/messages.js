@@ -23,7 +23,6 @@ router.get('/', function(req, res, next) {
     knex('messages')
         .select('id', 'title', 'body')
         .then(results => {
-            // console.log('results:', results);
             res.send(results)
         })
 });
@@ -60,3 +59,5 @@ router.delete('/:id', (req, res, next) => {
           })
         })
 })
+
+module.exports = router;
