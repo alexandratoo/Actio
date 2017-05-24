@@ -6,6 +6,7 @@ class EventForm extends Component {
     super(props);
 
     axios.get('/api/categories').then((categories) => {
+      console.log(categories);
       this.setState({categories: categories})
     });
 

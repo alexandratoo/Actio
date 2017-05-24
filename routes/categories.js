@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
   return knex('categories')
   .returning('*')
   .orderBy('title', 'asc')
-  .then((catagories) => res.json(events))
+  .then((categories) => res.json(categories))
   .catch((err) => next(err));
 });
 
