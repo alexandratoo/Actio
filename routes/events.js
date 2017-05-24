@@ -1,7 +1,8 @@
 'use strict';
 
 const express = require('express');         /* eslint-disable new-cap */
-const router = express.Router();            /* eslint-enable new-cap */
+const router = express.Router();
+const knex = require('../knex');
 
 /* CREATE */
 router.post('/', (req, res, next) => {

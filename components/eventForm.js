@@ -5,12 +5,6 @@ class EventForm extends Component {
   constructor(props) {
     super(props);
 
-    axios.get('/api/categories').then((categories) => {
-
-      this.setState({categories: categories})
-
-    });
-
     this.state = {
       currentUser: null,
       categories: [],
@@ -19,19 +13,24 @@ class EventForm extends Component {
       selected_skill_level: null,
       distances: [],
       selected_distance: null,
+      displayed_events: null,
       events: [],
       selected_event: null
     }
+
 
     axios.get('/api/categories').then((response) => {
       this.setState( { categories: response.data } )
     });
 
+    axios.get('/api/events/').then((response) => {
+      this.setState( { events: response.data } )
+    });
   }
 
   renderCats(category, key) {
     return (
-      <option key={key}>{ category.title }</option>
+      <option key={key}> { category.title } </option>
     )
   }
 
@@ -48,7 +47,7 @@ render() {
           <option value="Advanced">Advanced</option>
           <option value="Master">Master</option>
         </select>
-        <select name="Distance" className="col-sm-4">
+        <select name="distance" className="col-sm-4">
           <option value="5">5 Miles</option>
           <option value="10">10 Miles</option>
           <option value="20">20 Miles</option>

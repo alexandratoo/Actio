@@ -23,6 +23,7 @@ class Events extends React.Component {
         <Nav/>
         <div>
           <EventForm/>
+          
         </div>
         <Footer/>
       </div>
