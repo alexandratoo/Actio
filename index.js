@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './components/Main';
 import Events from './components/Events';
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Main from './components/Main'
 import Profile from './components/Profile'
 
 
