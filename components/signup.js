@@ -4,15 +4,18 @@ import Nav from './Nav'
 import Footer from './Footer'
 import SignupForm from './SignupForm'
 import axios from 'axios'
+import {BrowserRouter, Route, withRouter} from 'react-router-dom';
 
-export default class Signup extends Component {
+class Signup extends Component {
   constructor(props){
     super(props)
+    console.log(this.props);
   }
   createUserSubmission(user){
-    axios.post('/api/user', user)
-      .then((newUser) =>{
-        console.log(newUser);
+    console.log('posting')
+    return axios.post('/api/users', user)
+      .then((data)=>{
+        console.log('the data',data);
       })
   }
 
@@ -24,3 +27,5 @@ export default class Signup extends Component {
     )
   }
 }
+
+export default withRouter(Signup)
