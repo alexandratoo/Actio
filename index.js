@@ -1,13 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Main from './components/Main'
-import Profile from './components/Profile'
-import {BrowserRouter, Route} from 'react-router-dom';
+import React from 'react';
+import {render} from 'react-dom';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <div className="main">
-      <Route exact path="/" component={Main}></Route>
-      <Route path="/profile" component={Profile} />
-    </div>
-  </BrowserRouter>, document.getElementById('root'));
+import GMap from './components/Map';
+
+class App extends React.Component {
+  get initialCenter() {
+    return { lng: -90.1056957, lat: 29.9717272 }
+  }
+  render () {
+    return <div>
+      <h1>React with Google Maps</h1>
+      <GMap initialCenter={this.initialCenter} />
+    </div>;
+  }
+}
+
+render(<App/>, document.getElementById('root'));
