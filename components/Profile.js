@@ -22,7 +22,6 @@ class Profile extends React.Component{
       axios.get('/api/messages')
       .then((messages) =>{
         this.setState({messages: messages.data[0]})
-
       })
   }
 
