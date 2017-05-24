@@ -2,7 +2,7 @@
 
 const knex = require('../knex.js');
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
