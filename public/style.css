@@ -13,3 +13,17 @@ a {
   margin: 20px;
   padding: 20px;
 }
+
+html,
+body,
+.GMap {
+  height: 25.000em;
+  position: fixed;
+  width: 30.000em;
+}
+.GMap-canvas {
+  top: 20px;
+  display: block;
+  width: 30.000em;
+  height: 25.000em;
+}

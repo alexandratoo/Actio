@@ -3,6 +3,7 @@ import {Component} from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import EventForm from './eventForm'
+import EventMap from './EventMap'
 import axios from 'axios';
 
 class Events extends React.Component {
@@ -21,9 +22,11 @@ class Events extends React.Component {
 
       <div className="main">
         <Nav/>
-        <div>
+        <div className="container">
+          <div className="row">
           <EventForm/>
-          
+          <EventMap/>
+          </div>
         </div>
         <Footer/>
       </div>
