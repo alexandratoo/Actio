@@ -1,25 +1,19 @@
 import React from 'react'
-import { Component } from 'react';
+import {Component} from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
-import eventForm from './eventForm'
+import EventForm from './eventForm'
 import axios from 'axios';
 
 class Events extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      events: []
 
-  this.state = {
-    events : [],
-
-
-  };
-
-
-
+    };
   }
-
 
   render() {
 
@@ -27,9 +21,9 @@ class Events extends React.Component {
 
       <div className="main">
         <Nav/>
-          <div>   
-            <eventForm />
-          </div>
+        <div>
+          <EventForm/>
+        </div>
         <Footer/>
       </div>
     )

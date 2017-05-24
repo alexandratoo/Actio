@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 class EventForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
+
+    axios.get('/api/categories').then((categories) => {
+      this.setState({categories: categories})
+    });
 
     this.state = {
       currentUser: null,
@@ -13,31 +17,34 @@ class EventForm extends Component {
       selected_skill_level: null,
       distances: [],
       selected_distance: null,
-      events: []
+      events: [],
       selected_event: null
     }
 
     this.onInputChange = this.onInputChange.bind(this);
 
-    this.onFormSubmit = this.onFormSubmit.bind(this);
+    function renderCats(category) {
+      return (
+        <option>{category.title}</option>
+      )
+    }
+
   }
 
   onInputChange(event) {
-    this.setState({
-
-
-    })
+    this.setState({categories: categories})
   }
 
 
 
 
-  render() {
-    <table className="table table-hover">
-      <thead>Events</thead>
-      <tbody>
-        {this.props.events.map}
-      </tbody>
-    </table>
-  }
+render() {
+  return (
+    <select>
+      {this.props.state.map(this.renderCats)}
+    </select>
+  )
 }
+}
+
+export default EventForm

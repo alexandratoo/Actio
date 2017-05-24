@@ -12,3 +12,5 @@ router.get('/', (req, res, next) => {
   .then((catagories) => res.json(events))
   .catch((err) => next(err));
 });
+
+module.exports = router
