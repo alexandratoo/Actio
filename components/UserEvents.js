@@ -25,7 +25,8 @@ class UserEvents extends Component{
         {this.state.eventList.map((event,index) =>{
           return (
             <div key={index} className="well">
-            <h3>{event.name}</h3>
+              <h3>{event.name}</h3>
+              <p>{event.description}</p>
             </div>
           )
         })}
