@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Profile from './Profile'
+
 
 export default class Nav extends Component {
   render() {
@@ -8,6 +8,7 @@ export default class Nav extends Component {
       <nav className="navbar navbar-default navbar-static-top">
         <div className="container">
           <div id="navbar-collapse" className="collapse navbar-collapse">
+
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/Profile">My Profile</Link></li>

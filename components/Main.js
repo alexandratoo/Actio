@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
-import Profile from './Profile'
+import { Link } from 'react-router-dom'
 
 export default class Main extends Component {
   render() {
