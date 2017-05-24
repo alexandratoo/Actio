@@ -3,6 +3,7 @@ import axios from 'axios';
 import cookie from 'react-cookie';
 import Nav from './Nav'
 import Footer from './Footer'
+import UserEvents from './UserEvents'
 
 class Profile extends React.Component{
   constructor(props){
@@ -11,15 +12,12 @@ class Profile extends React.Component{
                   messages:[],
                   userEvents:[]};
     console.log(this.props.match.params.id);
+    console.log(this.props)
     let userId = this.props.match.params.id;
 
     axios.get(`/api/users/${userId}`)
       .then((user) =>{
         this.setState({currentUser:user.data})
-      })
-    axios.get(`/api/users/${userId}/events`)
-      .then((events) =>{
-        console.log(events)
       })
   }
 
@@ -30,6 +28,7 @@ class Profile extends React.Component{
         <img style={{height:'100px', width:'100px',display:'inline'}} src={this.state.currentUser.profile_pic} />
         <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
         <hr style={{borderColor:'black'}}/>
+        <UserEvents userId={this.props.match.params.id} />
         <Footer />
       </div>
     )
