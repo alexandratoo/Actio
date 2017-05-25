@@ -15,7 +15,10 @@ export default class Main extends Component {
       <FacebookLogin  fb={FB}/>
 
       <Footer/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9c8bffdbc82e7d8d6f9aba36b1da3f2acdb5a9a
     </div>
   );
  }
