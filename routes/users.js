@@ -32,7 +32,7 @@ router.get('/:id/events',(req,res,next) =>{
       (events) => {
         knex('messages')
           .then((messages) => {
-            for(let i = 0; i < messages.length; i++){
+            for(let i = messages.length-1; i >= 0; i--){
               let index = messages[i].event_id-1;
               if(events[index].messages == undefined){
                 events[index].messages = [];
