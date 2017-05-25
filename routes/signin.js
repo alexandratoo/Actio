@@ -22,6 +22,9 @@ router.post('/', (req, res, next) =>{
         bcrypt.compare(testUser.password,data[0].hashed_password)
         .then((valid) =>{
           if(valid){
+            res.cookie('userId',data[0].id);
+            res.cookie('zip', data[0].zip);
+            res.cookie('loggedIn',true);
             res.json({id:data[0].id})
           }
           else{

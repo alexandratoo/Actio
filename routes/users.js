@@ -50,6 +50,9 @@ router.post('/', (req, res, next) => {
     knex('users').returning('*').insert(newUser).then((data) => {
       console.log(data)
       delete data.hashed_password;
+      res.cookie('userId',data[0].id);
+      res.cookie('zip', data[0].zip);
+      res.cookie('loggedIn',true);
       res.json(data);
     })
   })
