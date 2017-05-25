@@ -23,9 +23,10 @@ export default class FacebookLogin extends React.Component {
       var self = this;
 
       if( response.status === "connected" ) {
-         console.log(this.FB);
-         console.log(response);
-         this.FB.api('/me', function(response) {
+         console.log("this.FB",this.FB);
+         console.log('onStatusChange response',response);
+         this.FB.api('/me?fields=name,email,picture', function(response) {
+            console.log(response);
             var message = "Welcome " + response.name;
             self.setState({
                message: message
@@ -46,6 +47,7 @@ export default class FacebookLogin extends React.Component {
             <div
                className="fb-login-button"
                data-max-rows="1"
+               scope="email"
                data-size="xlarge"
                data-show-faces="false"
                data-auto-logout-link="true"
