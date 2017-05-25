@@ -25,7 +25,7 @@ export default class FacebookLogin extends React.Component {
       if( response.status === "connected" ) {
          console.log("this.FB",this.FB);
          console.log('onStatusChange response',response);
-         this.FB.api('/me?fields=name,email', function(response) {
+         this.FB.api('/me?fields=name,email,picture', function(response) {
             console.log(response);
             var message = "Welcome " + response.name;
             self.setState({
