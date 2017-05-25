@@ -8,6 +8,8 @@ export default class Nav extends Component {
       <nav className="navbar navbar-default navbar-static-top">
         <div className="container">
           <div id="navbar-collapse" className="collapse navbar-collapse">
+          <a className="navbar-brand" ><img src="../public/images/ACTIO.png" alt="ActioLogo"/>
+       </a>
 
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>

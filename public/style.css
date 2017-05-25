@@ -85,7 +85,15 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-
+/*Nav*/
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
 .GMap {
   margin: 30px 0px;
   height: 25.000em;
