@@ -26,3 +26,8 @@ a {
   width: 30.000em;
   height: 25.000em;
 }
+
+.profEventImg {
+  width: 100px;
+  height: auto;
+}

@@ -31,7 +31,7 @@ class UserEvents extends Component {
         {this.state.eventList.map((event, index) => {
           return (
             <div key={index} className="well">
-              <div className="media-left">
+              <div className="profEventImg" className="media-left">
                 <img src={event.event_pic} className="media-object"/>
               </div>
               <div className="media-body">
@@ -40,11 +40,14 @@ class UserEvents extends Component {
                   {event.event_date}
                 </div>
                 <div className="text-right">
+                  <p>
+                    <b>Location: </b>
                   {event.location}
+                  </p>
                 </div>
                 <p>{event.description}</p>
               </div>
-              <button onClick={() => this.handleClick()}>Messages</button>
+              <button className="pri" onClick={() => this.handleClick()}>Messages</button>
               <div>
                 <ToggleDisplay show={this.state.click}>
                   {event.messages.map((message, index2) => {
