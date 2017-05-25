@@ -35,7 +35,11 @@ h2 {
       text-align:center;
       font-family: 'Permanent Marker', cursive;
       font-size: 60px;
-      color: hsla(155, 50%, 15%, 0.7);
+
+      color: #4a79c4;
+}
+.row-center {
+  text-align: center;
 
 }
 
@@ -106,7 +110,7 @@ h1 {
     float: right;
     padding-right: 30px;
     text-decoration: none;
-    color: #F6F5E4;
+    color: #c3d0e5;
     padding: 10px 30px 0 10px;
 }
 .navbar-brand>img {
@@ -117,7 +121,7 @@ h1 {
 /*footer*/
 .footText {
     font-size: 14px;
-    color: #F6F5E4;
+    color: #1e2126;
     display: inline-block;
     float: right;
     margin: auto 10px auto 0;
