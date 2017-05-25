@@ -58,8 +58,8 @@ class EventForm extends Component {
           </select>
         </div>
         <div className="row">
+          <h1 className="text-center">Events For You</h1>
           <div className="col-sm-6">
-            <h1>Events For You</h1>
             {this.state.events.map((event, index) => {
               return (
                 <div key={index} className="well">
