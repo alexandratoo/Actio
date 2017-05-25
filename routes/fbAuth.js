@@ -19,11 +19,17 @@ router.post('/', (req,res,next) =>{
           knex('users')
           .insert(newUser)
           .returning('*')
-          .then((data) => res.json(data))
+          .then((data) =>{
+
+            res.json(data)
+          })
         })
       }
       else{
         console.log('found user');
+        res.cookie('userId',data[0].id);
+        res.cookie('zip', data[0].zip);
+        res.cookie('loggedIn',true);
         res.json(data);
       }
     })
