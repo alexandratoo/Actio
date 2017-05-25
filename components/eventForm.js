@@ -62,19 +62,16 @@ class EventForm extends Component {
           <div className="col-sm-6">
             {this.state.events.map((event, index) => {
               return (
-                <div key={index} className="well">
+                <div key={index} className="well well-lg">
                   <div className="media-left">
-                    <img src={event.event_pic} className="media-object"/>
+                    <img src={event.event_pic} className="media-object responsive-img"/>
                   </div>
                   <div className="media-body">
-                    <h4 className="media-heading">{event.name}</h4>
+                    <h4 className="media-heading text-center">{event.name} at {event.event_date}</h4>
                     <div className="text-left">
-                      {event.event_date}
-                    </div>
-                    <div className="text-right">
                       {event.location}
                     </div>
-                    <p>{event.description}</p>
+                    <p className="text-left">{event.description}</p>
                   </div>
                 </div>
               )
