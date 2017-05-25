@@ -1,4 +1,4 @@
-import React, { Component } from react;
+import React, { Component } from 'react';
 import axios from 'axios';
 import cookie from 'react-cookie';
 import {BrowserRouter, Route, withRouter} from 'react-router-dom';
@@ -37,7 +37,7 @@ class NewEvent extends Component {
 
     axios.post('/api/events', newEvent)
       .then((data) => {
-        console.log
+        console.log("all data", data);
       })
 
   }

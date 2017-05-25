@@ -9,7 +9,7 @@ class EventMap extends React.Component {
   }
   render () {
     return (
-    <div className="col-sm-6">
+    <div className="center">
       <GMap initialCenter={this.initialCenter} />
     </div>
   )
