@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
 body {
   overflow: auto;
     height: 100%;
@@ -17,11 +21,14 @@ body::before {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /*-webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);*/
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+main {
+  margin-top: 50px;
 }
 /*Main*/
 h2 {
@@ -93,11 +100,28 @@ h1 {
 /*Nav*/
 .navbar-brand {
   padding: 0px;
+  font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    text-decoration: none;
+    color: #F6F5E4;
+    padding: 10px 30px 0 10px;
 }
 .navbar-brand>img {
   height: 100%;
   padding: 15px;
   width: auto;
+}
+/*footer*/
+.footText {
+    font-size: 14px;
+    color: #F6F5E4;
+    display: inline-block;
+    float: right;
+    margin: auto 10px auto 0;
+    padding: 20px 10px;
 }
 .GMap {
   text-align:center;
