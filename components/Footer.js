@@ -26,6 +26,7 @@ export default class Footer extends Component {
                 <div style={phantom} />
                 <div style={style}>
                     {this.props.children}
+                    <p class="footText text-right">&copy; ACTIO Crew  </p>
                 </div>
             </div>
     );
