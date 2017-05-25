@@ -36,10 +36,8 @@ router.get('/:id/events', (req, res, next) => {
             }
             res.json(events);
           })
-      }
-      res.json(events);
-    })
-  }).catch((err) => next(err));
+        })
+.catch((err) => next(err));
 });
 
 router.post('/', (req, res, next) => {

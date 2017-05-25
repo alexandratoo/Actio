@@ -58,7 +58,7 @@ class EventForm extends Component {
         </div>
         <div>
           <h1>Events For You</h1>
-          {this.state.events.map(event,index => {
+          {this.state.events.map((event,index) => {
             return (
               <div key={index} className="well">
                 <div className="media-left">
@@ -74,8 +74,8 @@ class EventForm extends Component {
                   </div>
                   <p>{event.description}</p>
                 </div>
-            </div>
-          ))}
+            </div>)
+          })}
         </div>
       </div>
     )
