@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
+import GoogleLogin from './GoogleLogin'
 
 export default class Main extends Component {
   render() {

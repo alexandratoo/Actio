@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-export default class GoogleLoginButton extends React.component {
-  onSignIn: function(googleUser) {
+export default class GoogleLogin extends React.component {
+  onSignIn(googleUser) {
       console.log("user signed in");
-      var profile=googleUser.getBasicProfile()
+      var profile=googleUser.getBasicProfile();
+
   },
-  renderGoogleLoginButton: function(){
-    gapi.signin2.render('my signin2', {
+  componentDidMount(){
+    gapi.signin2.render('g-signin2', {
       'scope': 'https://www.googleapis.com/auth/plus.login',
       'width': 200,
       'height': 50,
@@ -16,13 +17,12 @@ export default class GoogleLoginButton extends React.component {
       'onsuccess': this.onSignIn
     })
   },
-  componentDidMount: function(){
-    window.addEventListener('google-loaded',this.renderGoogleLoginButton);
-  },
-  render: function (){
-    let displayText = "Sign in with Google"
-    return (
-      <div id='mysignin2'></div>
-    )
-  }
+
+  // render (){
+  //   let displayText = "Sign in with Google"
+  //   return (
+  //     <div id='g-signin2'></div>
+  //   )
+  // }
 }
+export default GoogleLogin
