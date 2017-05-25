@@ -9,6 +9,7 @@ export default class Main extends Component {
     <div className="main">
       <Nav/>
       <h2>Main Component</h2>
+      <GoogleLogin/>
       <Footer/>
     </div>
   );
