@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import cookie from 'react-cookie';
-import Nav from './Nav'
-import Footer from './Footer'
+import Nav from './Nav';
+import Footer from './Footer';
 import ToggleDisplay from 'react-toggle-display';
+import EventMap from './eventMap';
 
 class UserEvents extends Component {
   constructor(props) {
@@ -27,40 +28,33 @@ class UserEvents extends Component {
   render() {
     return (
       <div>
-        <h1>My Events</h1>
-        {this.state.eventList.map((event, index) => {
-          return (
-            <div key={index} className="well">
-              <div className="media-left">
-                <img src={event.event_pic} className="media-object"/>
-              </div>
-              <div className="media-body">
-                <h4 className="media-heading">{event.name}</h4>
-                <div className="text-left">
-                  {event.event_date}
+        <div className="row">
+          <div className="container">
+            <EventMap />
+          </div>
+        </div>
+        <div className="row">
+          <h1 className="text-center">My Events</h1>
+          {this.state.eventList.map((event, index) => {
+            return (
+              <div key={index} className="well well-lg">
+                <div className="media-left">
+                  <img src={event.event_pic} className="media-object"/>
                 </div>
-                <div className="text-right">
-                  {event.location}
+                <div className="media-body">
+                  <h4 className="media-heading text-center">
+                    {event.name}
+                    at {event.event_date}</h4>
+                  <div className="text-left">
+                    {event.location}
+                  </div>
+                  <br/>
+                  <p className="text-left">{event.description}</p>
                 </div>
-                <p>{event.description}</p>
               </div>
-              <button onClick={() => this.handleClick()}>Messages</button>
-              <div>
-                <ToggleDisplay show={this.state.click}>
-                  {event.messages.map((message, index2) => {
-                    return (
-                      <div key={index2}>
-                        <h3>{message.title}</h3>
-                        <p>{message.body}</p>
-                      </div>
-                    )
-                  })}
-                </ToggleDisplay>
-
-              </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     )
   }
