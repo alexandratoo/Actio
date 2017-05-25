@@ -5,7 +5,6 @@ export default class FacebookLogin extends React.Component {
       super(props);
 
       this.FB = props.fb;
-
       this.state = {
          message: ""
       };

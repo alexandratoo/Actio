@@ -10,7 +10,7 @@ export default class Main extends Component {
     <div className="main">
       <Nav/>
       <h2>Main Component</h2>
-      <FacebookLogin/>
+      <FacebookLogin fb={FB}/>
       <Footer/>
     </div>
   );
