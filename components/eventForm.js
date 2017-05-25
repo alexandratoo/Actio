@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import cookie from 'react-cookie';
 
 class EventForm extends Component {
   constructor(props) {
@@ -23,9 +24,7 @@ class EventForm extends Component {
     });
 
     axios.get('/api/events/').then((response) => {
-      console.log('list all events', response.data);
       this.setState({events: response.data})
-
     });
   }
 
@@ -39,23 +38,46 @@ class EventForm extends Component {
 
   render() {
     return (
+      <div>
         <div className="row">
-            <select name="catSelect" className="col-sm-4">
-              {this.state.categories.map(this.renderCats)}
-            </select>
-            <select name="skillSelect" className="col-sm-4">
-              <option value="Beginner">Beginner</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advanced">Advanced</option>
-              <option value="Master">Master</option>
-            </select>
-            <select name="distance" className="col-sm-4">
-              <option value="5">5 Miles</option>
-              <option value="10">10 Miles</option>
-              <option value="20">20 Miles</option>
-              <option value="50">50 Miles</option>
-            </select>
+          <select name="catSelect" className="col-sm-4">
+            {this.state.categories.map(this.renderCats)}
+          </select>
+          <select name="skillSelect" className="col-sm-4">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Master">Master</option>
+          </select>
+          <select name="distance" className="col-sm-4">
+            <option value="5">5 Miles</option>
+            <option value="10">10 Miles</option>
+            <option value="20">20 Miles</option>
+            <option value="50">50 Miles</option>
+          </select>
         </div>
+        <div>
+          <h1>Events For You</h1>
+          {this.state.events.map(event,index => {
+            return (
+              <div key={index} className="well">
+                <div className="media-left">
+                  <img src={event.event_pic} className="media-object" />
+                </div>
+                <div className="media-body">
+                  <h4 className="media-heading">{event.name}</h4>
+                  <div className="text-left">
+                    {event.event_date}
+                  </div>
+                  <div className="text-right">
+                    {event.location}
+                  </div>
+                  <p>{event.description}</p>
+                </div>
+            </div>
+          ))}
+        </div>
+      </div>
     )
   }
 }
