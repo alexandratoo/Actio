@@ -6,61 +6,41 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  return knex('users')
-    .select('first_name', 'last_name', 'email', 'zip', 'profile_pic')
-    .then((users) => res.json(users))
-      .catch((err) => next(err));
+  return knex('users').select('first_name', 'last_name', 'email', 'zip', 'profile_pic').then((users) => res.json(users)).catch((err) => next(err));
 });
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
-  return knex('users')
-    .select('first_name', 'last_name', 'email', 'zip', 'profile_pic')
-    .where('id', id)
-    .first()
-    .then((user) => res.json(user))
-      .catch((err) => next(err));
+  return knex('users').select('first_name', 'last_name', 'email', 'zip', 'profile_pic').where('id', id).first().then((user) => res.json(user)).catch((err) => next(err));
 });
 
-router.get('/:id/events',(req,res,next) =>{
+router.get('/:id/events', (req, res, next) => {
   const id = req.params.id;
-  return knex('events_users')
-    .select('*')
-    .where('user_id', id)
-    .innerJoin('events','events_users.event_id','events.id')
-    .then(
-      (events) => {
-        knex('messages')
-          .then((messages) => {
-            for(let i = 0; i < messages.length; i++){
-              let index = messages[i].event_id-1;
-              if(events[index].messages == undefined){
-                events[index].messages = [];
-              }
-              events[index].messages.push({
-                title:messages[i].title,
-                body:messages[i].body
-              })
-            }
-            res.json(events);
-          })
+  return knex('events_users').select('*').where('user_id', id).innerJoin('events', 'events_users.event_id', 'events.id').then((events) => {
+    knex('messages').then((messages) => {
+      events.sort(function(a, b) {
+        return a.id - b.id
+      })
+      for (let i = 0; i < messages.length; i++) {
+        let index = messages[i].event_id;
+        if (events[index].messages == undefined) {
+          events[index].messages = [];
+        }
+        events[index].messages.push({title: messages[i].title, body: messages[i].body})
       }
-    )
-    .catch((err) => next(err));
+      res.json(events);
+    })
+  }).catch((err) => next(err));
 });
 
 router.post('/', (req, res, next) => {
   const newUser = req.body;
 
   let saltRounds = 8;
-  bcrypt.hash(newUser.password, saltRounds)
-  .then((hash) =>{
+  bcrypt.hash(newUser.password, saltRounds).then((hash) => {
     newUser.hashed_password = hash;
     delete newUser.password
-    knex('users')
-    .returning('*')
-    .insert(newUser)
-    .then((data) =>{
+    knex('users').returning('*').insert(newUser).then((data) => {
       console.log(data)
       delete data.hashed_password;
       res.json(data);
@@ -80,19 +60,12 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   const id = req.params.id;
   const editUser = req.body;
-  return knex('users')
-    .returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic'])
-    .where('id', id).update(changes)
-    .then(() => res.sendStatus(200))
-    .catch((err) => next(err));
+  return knex('users').returning(['first_name', 'last_name', 'email', 'zip', 'profile_pic']).where('id', id).update(changes).then(() => res.sendStatus(200)).catch((err) => next(err));
 });
 
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
-  return knex('users')
-  .where('id', id).del()
-  .then(() => res.sendStatus(200))
-  .catch((err) => next(err));
+  return knex('users').where('id', id).del().then(() => res.sendStatus(200)).catch((err) => next(err));
 });
 
 module.exports = router;

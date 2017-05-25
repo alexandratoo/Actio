@@ -38,11 +38,7 @@ class UserEvents extends Component{
               </div>
               <button type="button" id={event.event_id} className="btn btn-primary" onSelect={event => this.setState({click: true})}>Message Board</button>
               <div>
-                {(function(showMe) {
-                  if (showMe) {
-                    return (<div>of course</div>);
-                  }
-                })(this.state.click)}
+                
               </div>
             </div>
           )
