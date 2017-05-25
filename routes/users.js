@@ -24,13 +24,28 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/:id/events',(req,res,next) =>{
   const id = req.params.id;
-
   return knex('events_users')
     .select('*')
     .where('user_id', id)
     .innerJoin('events','events_users.event_id','events.id')
-    .innerJoin('messages','events.id','messages.event_id')
-    .then((userEvents) => res.json(userEvents))
+    .then(
+      (events) => {
+        knex('messages')
+          .then((messages) => {
+            for(let i = 0; i < messages.length; i++){
+              let index = messages[i].event_id-1;
+              if(events[index].messages == undefined){
+                events[index].messages = [];
+              }
+              events[index].messages.push({
+                title:messages[i].title,
+                body:messages[i].body
+              })
+            }
+            res.json(events);
+          })
+      }
+    )
     .catch((err) => next(err));
 });
 

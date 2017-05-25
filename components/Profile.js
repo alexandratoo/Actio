@@ -13,7 +13,7 @@ class Profile extends React.Component{
                   messages:[],
                   userEvents:[]};
     let userId = this.props.match.params.id;
-
+    console.log(userId);
     axios.get(`/api/users/${userId}`)
       .then((user) =>{
         this.setState({currentUser:user.data})
@@ -33,7 +33,6 @@ class Profile extends React.Component{
         <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
         <hr style={{borderColor:'black'}}/>
         <UserEvents userId={this.props.match.params.id} />
-<div>{this.state.messages.body}</div>
         <Footer />
       </div>
     )
