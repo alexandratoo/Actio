@@ -56,6 +56,7 @@ class UserEvents extends Component {
                     )
                   })}
                 </ToggleDisplay>
+
               </div>
             </div>
           )
