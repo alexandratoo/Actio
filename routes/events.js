@@ -36,6 +36,16 @@ router.get('/:id/messages', (req, res, next) => {
   .catch((err)=> next(err));
 });
 
+router.get('/:id/users', (req, res, next) => {
+  const id = req.params.id;
+  return knex('events_users')
+  .select('*')
+  .where('event_id', id)
+  .innerJoin('users','events_users.user_id','users.id')
+  .then((event)=> res.json(event))
+  .catch((err)=> next(err));
+});
+
 /* UPDATE */
 router.put('/:id', (req, res, next) => {
   const id = req.params.id;

@@ -3,16 +3,17 @@ import Footer from './Footer'
 import Nav from './Nav'
 import Main from './Main'
 import axios from 'axios'
+import EventMap from './eventMap'
 
 class EventView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       eventV: [],
-      eventMessages: []
+      eventMessages: [],
+      eventUsers: []
     }
     let eventId = this.props.match.params.id
-    console.log(eventId)
     axios.get(`/api/events/${eventId}`)
       .then((eventViewer) => {
         this.setState({eventV: eventViewer.data})
@@ -20,24 +21,32 @@ class EventView extends React.Component {
 
     axios.get(`/api/events/${eventId}/messages`)
       .then((messages) => {
-        console.log(messages.data)
         this.setState({eventMessages: messages.data})
+      })
+
+    axios.get(`/api/events/${eventId}/users`)
+      .then((users) => {
+        console.log(users)
+        this.setState({eventUsers: users.data})
       })
   }
   renderMessage(message, key) {
     return (
-      <option key={key}>
-        {message.title}
-      </option>
+      <div>
+      <h3>{message.title}</h3>
+      <p>{message.body}</p>
+      &nbsp;
+      </div>
     )
   }
-  renderMessageBody(message, key) {
+
+  renderUser(user, key) {
+    console.log('the user',user)
     return (
-      <option key={key}>
-        {message.body}
-      </option>
+        <img style={{height:'70px', width:'70px',display:'inline'}} src={user.profile_pic} />
     )
   }
+
   render() {
     return (
       <div>
@@ -46,10 +55,16 @@ class EventView extends React.Component {
           <img className = "container-fluid full" style={{height:'200px', width:'750px'}}
           src={this.state.eventV.event_pic} />
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
+          <button className="btn-warning centered">Edit Post</button>
+          <button className="btn-danger pull-right">Delete Post</button>
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
-          <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className="messageTitle">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
-          <div className="messageBody">{this.state.eventMessages.map(this.renderMessageBody)}</div>
+          <EventMap />
+          <h2 className = "messages text-center">Attending:</h2>
+          {this.state.eventUsers.map(this.renderUser)}
+          <h2 className = "messages text-center">Messages:</h2> &nbsp; <div >{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
+          <button className="waves-effect waves-light btn-primary centered">Add a message</button>
+
           </div>
       </div>
     )
