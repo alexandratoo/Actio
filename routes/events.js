@@ -7,10 +7,11 @@ const knex = require('../knex');
 /* CREATE */
 router.post('/', (req, res, next) => {
   const newEvent = req.body;
+  newEvent.cat_id = Number.parseInt(newEvent.cat_id);
   return knex('events')
   .returning('*')
   .insert(newEvent)
-  .then(() => res.sendStatus(200))
+  .then((data) => res.json(data))
   .catch((err)=> next(err));
 });
 

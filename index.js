@@ -16,7 +16,7 @@ ReactDOM.render(
       <Route exact path="/" component={Main}></Route>
       <Route exact path="/events" component={Events}></Route>
       <Route exact path="/events/:id" component={EventView}></Route>
-      <Route exact path="/events/new" component={NewEvent}></Route>
+      <Route exact path="/create" component={NewEvent}></Route>
       <Route exact path="/users/:id" component={Profile}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/signin" component={SignIn}></Route>

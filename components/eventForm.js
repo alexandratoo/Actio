@@ -29,6 +29,10 @@ class EventForm extends Component {
     });
   }
 
+  filterEvents() {
+
+  }
+
   renderCats(category, key) {
     return (
       <option key={key}>
