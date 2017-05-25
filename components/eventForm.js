@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import cookie from 'react-cookie';
 import EventMap from './eventMap';
 
 class EventForm extends Component {
@@ -21,6 +20,7 @@ class EventForm extends Component {
     }
 
     axios.get('/api/categories').then((response) => {
+      console.log('cookie is?', document.cookie);
       this.setState({categories: response.data})
     });
 
