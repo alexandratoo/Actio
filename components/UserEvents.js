@@ -28,8 +28,8 @@ class UserEvents extends Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="container">
+        <div className="row text-center">
+          <div className="container text-center">
             <EventMap />
           </div>
         </div>
@@ -43,13 +43,28 @@ class UserEvents extends Component {
                 </div>
                 <div className="media-body">
                   <h4 className="media-heading text-center">
-                    {event.name}
-                    at {event.event_date}</h4>
+                    {event.name} at {event.event_date}</h4>
                   <div className="text-left">
                     {event.location}
                   </div>
                   <br/>
                   <p className="text-left">{event.description}</p>
+                </div>
+                <div id="messageButton">
+                <button onClick={() => this.handleClick()}>Messages</button>
+              </div>
+              <hr/>
+                <div>
+                  <ToggleDisplay show={this.state.click}>
+                    {event.messages.map((message, index2) => {
+                      return (
+                        <div key={index2}>
+                          <h4>{message.title}</h4>
+                          <p id="messageId">{message.body}</p>
+                        </div>
+                      )
+                    })}
+                  </ToggleDisplay>
                 </div>
               </div>
             )

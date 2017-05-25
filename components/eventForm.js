@@ -39,7 +39,7 @@ class EventForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="row">
           <select name="catSelect" className="col-sm-4">
             {this.state.categories.map(this.renderCats)}

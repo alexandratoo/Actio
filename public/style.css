@@ -29,8 +29,16 @@ h2 {
       font-family: 'Permanent Marker', cursive;
       font-size: 60px;
       color: hsla(155, 50%, 15%, 0.7);
+
 }
 
+h1{
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
 
 a {
   color: #00B7FF;
@@ -44,15 +52,16 @@ a {
 }
 
 
-/*.GMap {
-  height: 250.000px;
-  position: inherit;
-  width: 300.000px;
-}*/
+.GMap {
+  text-align:center;
+  display:block;
+  margin:auto;
+}
 .GMap-canvas {
   display: block;
   width: 300px;
   height: 250px;
+  margin:auto;
 }
 .middle {
   weight: 200px;
@@ -62,5 +71,12 @@ a {
 .backgroundImg {
   width:700px;
   display: compact;
+}
 
+#messageButton{
+  margin-top: 10px;
+}
+
+#messageId{
+  margin-bottom: 25px;
 }
