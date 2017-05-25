@@ -127,6 +127,12 @@ h1 {
     margin: auto 10px auto 0;
     padding: 20px 10px;
 }
+/*New Event*/
+.siteBtn:hover {
+    background-color: hsla(155, 50%, 15%, 0.4);
+    color: hsla(0, 50%, 100%, .8)
+  }
+  
 .GMap {
   text-align:center;
   display:block;
