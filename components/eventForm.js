@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import cookie from 'react-cookie';
+import EventMap from './eventMap';
 
 class EventForm extends Component {
   constructor(props) {
@@ -56,26 +57,32 @@ class EventForm extends Component {
             <option value="50">50 Miles</option>
           </select>
         </div>
-        <div>
-          <h1>Events For You</h1>
-          {this.state.events.map((event,index) => {
-            return (
-              <div key={index} className="well">
-                <div className="media-left">
-                  <img src={event.event_pic} className="media-object" />
-                </div>
-                <div className="media-body">
-                  <h4 className="media-heading">{event.name}</h4>
-                  <div className="text-left">
-                    {event.event_date}
+        <div className="row">
+          <div className="col-sm-6">
+            <h1>Events For You</h1>
+            {this.state.events.map((event, index) => {
+              return (
+                <div key={index} className="well">
+                  <div className="media-left">
+                    <img src={event.event_pic} className="media-object"/>
                   </div>
-                  <div className="text-right">
-                    {event.location}
+                  <div className="media-body">
+                    <h4 className="media-heading">{event.name}</h4>
+                    <div className="text-left">
+                      {event.event_date}
+                    </div>
+                    <div className="text-right">
+                      {event.location}
+                    </div>
+                    <p>{event.description}</p>
                   </div>
-                  <p>{event.description}</p>
                 </div>
-            </div>)
-          })}
+              )
+            })}
+          </div>
+          <div className="col-sm-6">
+            <EventMap/>
+          </div>
         </div>
       </div>
     )
