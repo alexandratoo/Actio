@@ -28,12 +28,17 @@ h2 {
       text-align:center;
       font-family: 'Permanent Marker', cursive;
       font-size: 60px;
-      color: "white";
-}
-.row-center {
-  text-align: center;
+      color: hsla(155, 50%, 15%, 0.7);
+
 }
 
+h1{
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
 a {
   color: #00B7FF;
 }
@@ -95,15 +100,15 @@ h1 {
   width: auto;
 }
 .GMap {
-  margin: 30px 0px;
-  height: 25.000em;
-  position: inherit;
-  width: 30.000em;
+  text-align:center;
+  display:block;
+  margin:auto;
 }
 .GMap-canvas {
   display: block;
-  width: 30.000em;
-  height: 25.000em;
+  width: 300px;
+  height: 250px;
+  margin:auto;
 }
 .middle {
   weight: 200px;
@@ -113,5 +118,12 @@ h1 {
 .backgroundImg {
   width:700px;
   display: compact;
+}
 
+#messageButton{
+  margin-top: 10px;
+}
+
+#messageId{
+  margin-bottom: 25px;
 }
