@@ -44,15 +44,15 @@ a {
 }
 
 
-.GMap {
-  height: 25.000em;
+/*.GMap {
+  height: 250.000px;
   position: inherit;
-  width: 30.000em;
-}
+  width: 300.000px;
+}*/
 .GMap-canvas {
   display: block;
-  width: 30.000em;
-  height: 25.000em;
+  width: 300px;
+  height: 250px;
 }
 .middle {
   weight: 200px;
