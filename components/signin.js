@@ -50,17 +50,17 @@ class SignIn extends Component{
   render(){
     return(
       <div>
-        <h1>Sign In</h1>
-        <div className="content">
-            <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+        <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+            <h1>Sign In</h1>
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange}name="email" type="text" />
           <input onChange={this.handleChange}name="password" type="password"/>
-          <input type="submit" className='btn-primary' />
+          <input type="submit" className='btn-custom' />
+
         </form>
       </div>
       </div>
-      </div>
+
     )
   }
 }
