@@ -48,25 +48,25 @@ a {
 h1 {
   font-family: 'Raleway', sans-serif;
 }
-.submitbutton {
-    font-family: 'Raleway', sans-serif;
-}
+
 .btn-custom {
-  background-color: hsl(112, 100%, 71%) !important;
+  background-color: hsl(242, 11%, 68%) !important;
+  font-family: 'Raleway', sans-serif;
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7ffd1", endColorstr="#7eff6b");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#d7ffd1), to(#7eff6b));
-  /*background-image: -moz-linear-gradient(top, #d7ffd1, #7eff6b);
-  background-image: -ms-linear-gradient(top, #d7ffd1, #7eff6b);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7ffd1), color-stop(100%, #7eff6b));
-  background-image: -webkit-linear-gradient(top, #d7ffd1, #7eff6b);
-  background-image: -o-linear-gradient(top, #d7ffd1, #7eff6b);
-  background-image: linear-gradient(#d7ffd1, #7eff6b);
-  border-color: #7eff6b #7eff6b hsl(112, 100%, 66%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#12b12c123", endColorstr="#a5a4b6");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#12b12c123), to(#a5a4b6));
+  background-image: -moz-linear-gradient(top, #12b12c123, #a5a4b6);
+  background-image: -ms-linear-gradient(top, #12b12c123, #a5a4b6);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #12b12c123), color-stop(100%, #a5a4b6));
+  background-image: -webkit-linear-gradient(top, #12b12c123, #a5a4b6);
+  background-image: -o-linear-gradient(top, #12b12c123, #a5a4b6);
+  background-image: linear-gradient(#12b12c123, #a5a4b6);
+  border-color: #a5a4b6 #a5a4b6 hsl(242, 11%, 56%);
   color: #333 !important;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.33);
-  -webkit-font-smoothing: antialiased;*/
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.79);
+  -webkit-font-smoothing: antialiased;
 }
+
 
 .GMap {
   height: 25.000em;
