@@ -9,15 +9,13 @@ import Footer from './Footer'
 class UserEvents extends Component{
   constructor(props){
     super(props)
-    this.state = {eventList:[]}
+    this.state = {eventList:[], click: false}
     let userId = this.props.userId;
     axios.get(`/api/users/${userId}/events`)
       .then((events) =>{
-        console.log(events)
         this.setState({eventList:events.data})
       })
   }
-
   render(){
     return(
       <div>
@@ -25,8 +23,27 @@ class UserEvents extends Component{
         {this.state.eventList.map((event,index) =>{
           return (
             <div key={index} className="well">
-              <h3>{event.name}</h3>
-              <p>{event.description}</p>
+              <div className="media-left">
+                <img src={event.event_pic} className="media-object" />
+              </div>
+              <div className="media-body">
+                <h4 className="media-heading">{event.name}</h4>
+                <div className="text-left">
+                  {event.event_date}
+                </div>
+                <div className="text-right">
+                  {event.location}
+                </div>
+                <p>{event.description}</p>
+              </div>
+              <button type="button" id={event.event_id} className="btn btn-primary" onSelect={event => this.setState({click: true})}>Message Board</button>
+              <div>
+                {(function(showMe) {
+                  if (showMe) {
+                    return (<div>of course</div>);
+                  }
+                })(this.state.click)}
+              </div>
             </div>
           )
         })}

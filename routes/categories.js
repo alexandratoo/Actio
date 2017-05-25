@@ -11,7 +11,6 @@ router.get('/', (req, res, next) => {
   .orderBy('title', 'asc')
   .then((categories) => res.json(categories))
   .catch((err) => next(err));
-
 });
 
 module.exports = router
