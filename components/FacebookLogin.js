@@ -1,6 +1,9 @@
 import React from 'react';
+import axios from 'axios';
+import {withRouter} from 'react-router-dom';
 
-export default class FacebookLogin extends React.Component {
+
+class FacebookLogin extends React.Component {
    constructor(props) {
       super(props);
 
@@ -8,9 +11,11 @@ export default class FacebookLogin extends React.Component {
       this.state = {
          message: ""
       };
-
+    this.redirectPage = this.redirectPage.bind(this);
    }
-
+   redirectPage(data){
+     this.props.history.push(`/users/${data.data[0].id}`);
+   }
    componentDidMount() {
       this.FB.Event.subscribe('auth.logout',
          this.onLogout.bind(this));
@@ -23,15 +28,19 @@ export default class FacebookLogin extends React.Component {
       var self = this;
 
       if( response.status === "connected" ) {
-         console.log("this.FB",this.FB);
-         console.log('onStatusChange response',response);
-         this.FB.api('/me?fields=name,email,picture', function(response) {
-            console.log(response);
-            var message = "Welcome " + response.name;
+        console.log("this.FB",this.FB);
+        console.log('onStatusChange response',response);
+        this.FB.api('/me?fields=name,email,picture', function(userInfo) {
+          var message = "Welcome " + userInfo.name;
+          axios.post('/api/fbAuth', {resonse:response,userInfo:userInfo})
+          .then((data) =>{
             self.setState({
                message: message
             });
-         })
+
+            self.redirectPage(data);
+          })
+        })
       }
    }
 
@@ -57,4 +66,6 @@ export default class FacebookLogin extends React.Component {
          </div>
       );
    }
-};
+}
+
+export default withRouter(FacebookLogin)
