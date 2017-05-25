@@ -15,21 +15,18 @@ class EventView extends React.Component {
     console.log(eventId)
     axios.get(`/api/events/${eventId}`)
       .then((eventViewer) => {
-        console.log(eventViewer.data.description)
-        console.log(eventViewer.data)
         this.setState({eventV: eventViewer.data})
       })
 
     axios.get('/api/messages')
       .then((messages) => {
-        console.log(messages.data)
         this.setState({eventMessages: messages.data[0]})
       })
   }
   render() {
     return (
       <div>
-          <img style={{height:'100px', width:'100px',display:'inline'}}
+          <img style={{height:'200px', width:'400px',display:'inline'}}
           src={this.state.eventV.event_pic} />
           <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventV.name}</h1>
           <h3 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
