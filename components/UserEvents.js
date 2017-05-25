@@ -32,8 +32,8 @@ class UserEvents extends Component {
         {this.state.eventList.map((event, index) => {
           return (
             <div>
-            <div className="row">
               <div className="container">
+            <div className="row">
                 <EventMap />
               </div>
             </div>
