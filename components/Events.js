@@ -20,11 +20,13 @@ class Events extends React.Component {
 
     return (
 
-      <div className="main">
+      <div>
         <Nav/>
-        <div className="container">
+        <div>
           <div className="row">
           <EventForm/>
+          </div>
+          <div className="row">
           <EventMap/>
           </div>
         </div>

@@ -14,11 +14,10 @@ a {
   padding: 20px;
 }
 
-html,
-body,
+
 .GMap {
   height: 25.000em;
-  position: fixed;
+  position: inherit;
   width: 30.000em;
 }
 .GMap-canvas {
