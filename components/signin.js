@@ -51,11 +51,15 @@ class SignIn extends Component{
     return(
       <div>
         <h1>Sign In</h1>
+        <div class="content">
+            <div class="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange}name="email" type="text" />
           <input onChange={this.handleChange}name="password" type="password"/>
-          <input type="submit" />
+          <input type="submit" class='btn-custom' />
         </form>
+      </div>
+      </div>
       </div>
     )
   }
