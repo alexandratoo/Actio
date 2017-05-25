@@ -60,8 +60,33 @@ a {
   display: block;
   margin: auto;
 }
-.backgroundImg {
-  width:700px;
-  display: compact;
+.full {
+  image-orientation: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height:100%;
+}
 
+.messageTitle {
+  font-size: 30px;
+  font-weight: bold;;
+}
+
+.eventTitle {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.messages {
+  font-size: 50px;
+  font-weight: 400;
+}
+.card-block.trip {
+    border-radius: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
 }
