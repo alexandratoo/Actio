@@ -18,21 +18,39 @@ class EventView extends React.Component {
         this.setState({eventV: eventViewer.data})
       })
 
-    axios.get('/api/messages')
+    axios.get(`/api/events/${eventId}/messages`)
       .then((messages) => {
-        this.setState({eventMessages: messages.data[0]})
+        console.log(messages.data)
+        this.setState({eventMessages: messages.data})
       })
+  }
+  renderMessage(message, key) {
+    return (
+      <option key={key}>
+        {message.title}
+      </option>
+    )
+  }
+  renderMessageBody(message, key) {
+    return (
+      <option key={key}>
+        {message.body}
+      </option>
+    )
   }
   render() {
     return (
       <div>
-          <img style={{height:'200px', width:'400px',display:'inline'}}
+        <Nav />
+          <div className = "card-block trip container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+          <img className = "container-fluid full" style={{height:'200px', width:'750px'}}
           src={this.state.eventV.event_pic} />
-          <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventV.name}</h1>
-          <h3 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
-          <h3 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventV.description}</h3>
-          <h2 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventMessages.title}</h2>
-          <h4 style={{display:'inline', marginLeft:'25px'}}>{this.state.eventMessages.body}</h4>
+          <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
+          <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
+          <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
+          <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className="messageTitle">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
+          <div className="messageBody">{this.state.eventMessages.map(this.renderMessageBody)}</div>
+          </div>
       </div>
     )
   }

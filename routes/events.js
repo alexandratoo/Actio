@@ -26,6 +26,16 @@ router.get('/:id', (req, res, next) => {
   .catch((err)=> next(err));
 });
 
+/* READ */
+router.get('/:id/messages', (req, res, next) => {
+  const id = req.params.id;
+  return knex('messages')
+  .select('*')
+  .where('event_id', id)
+  .then((event)=> res.json(event))
+  .catch((err)=> next(err));
+});
+
 /* UPDATE */
 router.put('/:id', (req, res, next) => {
   const id = req.params.id;
