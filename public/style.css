@@ -15,7 +15,7 @@ body::before {
     content: '';
     z-index: -1;
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -27,9 +27,9 @@ body::before {
     -ms-filter: blur(1px);
     filter: blur(1px);
 }
-main {
+/*main {
   margin-top: 50px;
-}
+}*/
 /*Main*/
 h2 {
       text-align:center;
@@ -132,7 +132,7 @@ h1 {
     background-color: hsla(155, 50%, 15%, 0.4);
     color: hsla(0, 50%, 100%, .8)
   }
-  
+
 .GMap {
   text-align:center;
   display:block;
@@ -185,4 +185,38 @@ h1 {
 
 #messageId{
   margin-bottom: 25px;
+}
+
+.page-one-pg {
+  background: url(http://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg) no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: auto;
+  margin: 0%;
+  padding: 0%;
+}
+
+.profilePic {
+  background: url(http://www.colorado.edu/sites/default/files/styles/large_wide_thumbnail/public/article-thumbnail/boulder_flatirons.png?itok=1yLVD2gi) no-repeat center center fixed;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: auto;
+  margin: 0%;
+  padding: 0%;
+}
+.name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
 }

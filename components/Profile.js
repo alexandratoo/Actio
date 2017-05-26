@@ -27,11 +27,12 @@ class Profile extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className = "profilePic">
         <Nav />
-        <img style={{height:'100px', width:'100px',display:'inline'}} src={this.state.currentUser.profile_pic} />
-        <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
-        <hr style={{borderColor:'black'}}/>
+        <div className="card-block trip container col-md-2 col-sm-2 col-sm-offset-2">
+        <img className="img-fluid container-fluid full"style={{height:'220px', width:'220px',display:'block', marginLeft:"-9px", marginTop:"10px"}} src={this.state.currentUser.profile_pic} />
+        <h1 className="text-center name" style={{display:'block', marginLeft:"-8px"}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
+        </div>
         <UserEvents userId={this.props.match.params.id} />
         <Footer />
       </div>
