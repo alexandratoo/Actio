@@ -20,12 +20,19 @@ body::before {
   height: 200%;
   position: fixed;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      -webkit-filter: blur(1px);
+      -moz-filter: blur(1px);
+      -o-filter: blur(1px);
+      -ms-filter: blur(1px);
+      filter: blur(1px);
   background-size: cover;
   overflow: auto;
   margin-bottom: : -50px;
   padding: 0%;
+  opacity: 0.4%;
 }
 
 
@@ -121,7 +128,7 @@ h1 {
 
 /*Nav*/
 #eventName{
-  
+
 }
 .navbar-brand {
   padding: 0px;
@@ -258,7 +265,7 @@ h1 {
 }
 
 .page-one-pg {
-  background: url(http://blog.oxforddictionaries.com/wp-content/uploads/mountain-names.jpg) no-repeat center center fixed;
+  background: url("./images/redClimber.jpg");
   content: '';
   z-index: -1;
   width: 100%;
@@ -271,6 +278,7 @@ h1 {
   overflow: auto;
   margin: 0%;
   padding: 0%;
+  
 }
 
 .profilePic {
@@ -395,7 +403,7 @@ h1 {
 }
 /*forms*/
 
-.card-block {
+.card-block.form {
     border-radius: 20px;
     padding-bottom: 30px;
     margin-bottom: 20px;
@@ -408,3 +416,8 @@ h1 {
     display: block;
     margin: auto;
 }
+.row {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+/*main*/
