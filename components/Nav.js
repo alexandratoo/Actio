@@ -26,7 +26,7 @@ export default class Nav extends Component {
       <nav className="navbar navbar-default navbar-static-top">
         <div className="container">
           <div id="navbar-collapse" className="collapse navbar-collapse">
-          <a className="navbar-brand" ><img src="../images/ACTIO.png" alt="ActioLogo"/>
+          <a className="navbar-brand logO" ><img src="../images/ACTIO.png" alt="ActioLogo"/>
        </a>
 
             <ul className="nav navbar-nav">

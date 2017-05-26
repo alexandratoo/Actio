@@ -1,15 +1,17 @@
 html {
-    overflow: hidden;
-    height: 100%;
+  overflow: hidden;
+  height: 100%;
 }
+
 body {
   overflow: auto;
-    height: 100%;
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 body::before {
   background: url("./images/redClimber.jpg") no-repeat center center fixed;
   content: '';
@@ -25,33 +27,40 @@ body::before {
   margin-bottom: : -50px;
   padding: 0%;
 }
+
+
 /*main {
   margin-top: 50px;
 }*/
+
+
 /*Main*/
+
 h2 {
-      text-align:center;
-
-      font-size: 60px;
-
-      color: white;
+  text-align: center;
+  font-size: 60px;
+  color: white;
 }
+
 .row-center {
   text-align: center;
-
 }
+
 h3 {
   font-family: 'Raleway', sans-serif;
   text-align: center;
   font-size: 30px;
 }
-h1{
-color: white;
-opacity: 0.8
+
+h1 {
+  color: white;
+  opacity: 0.8
 }
+
 a {
   color: #00B7FF;
 }
+
 .Main {
   text-align: center;
   background: #f5f5f5;
@@ -59,11 +68,15 @@ a {
   margin: 20px;
   padding: 20px;
 }
+
+
 /*Signin*/
+
 h1 {
   font-family: 'Raleway', sans-serif;
   text-align: center;
 }
+
 .btn-custom2 {
   font-family: 'Raleway', sans-serif;
   background-color: hsl(0, 0%, 16%) !important;
@@ -101,52 +114,61 @@ h1 {
 }
 
 /*Nav*/
+
 .navbar-brand {
   padding: 0px;
   font-family: 'Raleway', sans-serif;
-    font-size: 24px;
-    display: inline-block;
-    float: right;
-    padding-right: 30px;
-    text-decoration: none;
-    color: black;
-    padding: 10px 30px 0 10px;
+  font-size: 24px;
+  display: inline-block;
+  float: right;
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 10px 30px 0 10px;
 }
+
 .navbar-brand>img {
-  height: 100%;
-  padding: 15px;
-  width: auto;
+  /*padding: px;*/
+  width: 100px;
+  height: auto
 }
+
 /*footer*/
+
 .footText {
-    font-size: 14px;
-    color: white;
-    display: inline-block;
-    margin: auto 10px auto 0;
-    padding: 20px 10px;
+  font-size: 14px;
+  color: white;
+  display: inline-block;
+  margin: auto 10px auto 0;
+  padding: 20px 10px;
 }
+
 /*New Event*/
+
 .siteBtn:hover {
-    background-color: hsla(155, 50%, 15%, 0.4);
-    color: hsla(0, 50%, 100%, .8)
-  }
+  background-color: hsla(155, 50%, 15%, 0.4);
+  color: hsla(0, 50%, 100%, .8)
+}
 
 .GMap {
-  text-align:center;
-  display:block;
-  margin:auto;
+  text-align: center;
+  display: block;
+  margin: auto;
 }
+
 .GMap-canvas {
   display: block;
   width: 300px;
   height: 250px;
-  margin:auto;
+  margin: auto;
 }
+
 .middle {
   weight: 200px;
   display: block;
   margin: auto;
 }
+
 .full {
   image-orientation: center;
   -webkit-background-size: cover;
@@ -155,6 +177,7 @@ h1 {
   -o-background-size: cover;
   width:100%;
   max-height: 400px;
+
 }
 
 /*@media only screen and (max-width: 768px){
@@ -176,28 +199,30 @@ h1 {
   font-weight: 400;
   color: black;
 }
+
 .card-block.trip {
-    border-radius: 20px;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background-color: white;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: white;
 }
-#messageButton{
+
+#messageButton {
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 10px
 }
 
-#messageId{
+#messageId {
   margin-bottom: 25px
 }
 
-.well{
+.well {
   background-color: f2f2f2
 }
 
-.eventPic{
+.eventPic {
   width: 300px;
   height: auto;
   border-radius: 25px;
@@ -232,52 +257,53 @@ h1 {
   margin: 0%;
   padding: 0%;
 }
+
 .name {
   font-family: 'Raleway', sans-serif;
   font-size: 50px;
 }
 
-#signIn{
-  border-radius: 10px;
-
-}
-
-#password{
+#signIn {
   border-radius: 10px;
 }
 
-#title{
-color: #fff;
-opacity: 0.9
-}
-
-#sub{
+#password {
   border-radius: 10px;
 }
 
-.myEvents{
+#title {
+  color: #fff;
+  opacity: 0.9
+}
+
+#sub {
+  border-radius: 10px;
+}
+
+.myEvents {
   font-size: 60px;
   color: white
 }
 
-.myEventsDiv{
+.myEventsDiv {
   background-color: black;
   opacity: 0.5;
 }
 
-.blurb{
+.blurb {
   color: #d9d9d9;
   opacity: 0.7
 }
 
-.mapMarg{
+.mapMarg {
   margin-top: 20px;
   margin-bottom: 20px
 }
 
-.navbar{
+.navbar {
   background-color: black;
 }
+
 /*buttons*/
 .btn-custom {
   background-color: hsl(0, 0%, 79%) !important;
