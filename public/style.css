@@ -121,7 +121,7 @@ h1 {
 
 /*Nav*/
 #eventName{
-  
+
 }
 .navbar-brand {
   padding: 0px;
@@ -334,7 +334,7 @@ h1 {
   background-color: black;
 }
 
-<<<<<<< HEAD
+
 .proPic {
   image-orientation: center;
   -webkit-background-size: cover;
@@ -392,4 +392,10 @@ h1 {
   color: white;
   padding:10px;
   background-color: black
+}
+
+#proPic{
+  border-radius:25px;
+  width:200px;
+  height: auto;
 }

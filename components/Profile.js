@@ -29,9 +29,9 @@ class Profile extends React.Component{
     return(
       <div className = "profilePic">
         <Nav />
-        <div className="card-block eventUser container col-md-2 col-sm-4 col-xs-8 col-xs-offset-2">
-        <img className="img-fluid proPic col-md-2 col-xs-6 col-sm-2"style={{height:'220px', width:'220px', marginTop:"10px"}} src={this.state.currentUser.profile_pic} />
-        <h1 className="text-center name" style={{display:'block', marginLeft:"-8px"}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
+        <div>
+        <img id="proPic" className="img-fluid proPic col-md-2 col-xs-6 col-sm-2" src={this.state.currentUser.profile_pic} />
+        <h1 className="text-center name">{this.state.currentUser.first_name} {this.state.currentUser.last_name}'s Events</h1>
         </div>
         <UserEvents userId={this.props.match.params.id} />
         <Footer />
