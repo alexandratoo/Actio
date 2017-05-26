@@ -63,7 +63,7 @@ class UserEvents extends Component {
                   <ToggleDisplay show={this.state.click}>
                     {event.messages.map((message, index2) => {
                       return (
-                        <div key={index2}>
+                        <div key={index2} className="border-bottom-0">
                           <h4>{message.title}</h4>
                           <p id="messageId">{message.body}</p>
                         </div>

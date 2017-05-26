@@ -56,7 +56,10 @@ h1 {
   color: white;
   opacity: 0.8
 }
-
+h4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+}
 a {
   color: #00B7FF;
 }
@@ -68,7 +71,10 @@ a {
   margin: 20px;
   padding: 20px;
 }
-
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
 
 /*Signin*/
 
@@ -204,7 +210,10 @@ h1 {
   font-weight: 400;
   color: black;
 }
-
+.messageText {
+  border-radius: 10px, black;
+  font-family: 'Raleway', sans-serif;
+}
 .card-block.trip {
   border-radius: 20px;
   padding-bottom: 30px;
