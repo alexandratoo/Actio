@@ -66,7 +66,7 @@ class EventView extends React.Component {
           <div className="cardContent text-center col-lg-12 col-md-12">
           <h2 className="text-center eventTitle" style={{display:'center', color:"black", marginLeft:'25px'}}>{this.state.eventV.name}</h2>
           <hr></hr>
-          
+
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
           <div className="mapMarg">
@@ -80,8 +80,8 @@ class EventView extends React.Component {
            <MessageForm id={this.props.match.params.id} />
           </div>
           <div className='row'>
-          <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning pull-left">Edit Post</button></Link>
-          <button onClick={this.handleDelete} className="btn-danger pull-right">Delete Post</button>
+          <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-secondary sub pull-left">Edit Post</button></Link>
+          <button onClick={this.handleDelete} className="btn-secondary sub pull-right">Delete Post</button>
           </div>
           </div>
       </div>
