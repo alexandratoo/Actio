@@ -17,6 +17,7 @@ router.post('/', (req, res, next) => {
 
 /* READ */
 router.get('/:id', (req, res, next) => {
+  console.log('here');
   const id = req.params.id;
   return knex('events')
   .select('*')

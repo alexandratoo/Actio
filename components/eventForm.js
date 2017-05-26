@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import EventMap from './eventMap';
+import { Link } from 'react-router-dom';
 
 class EventForm extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class EventForm extends Component {
                 </div>
                 <div className="media-body">
                   <h4 className="media-heading text-center">
-                    {event.name} at {event.event_date}</h4>
+                    <Link to={`/events/${event.id}`}>{event.name}</Link> at {event.event_date}</h4>
                   <div className="text-left">
                     {event.location}
                   </div>

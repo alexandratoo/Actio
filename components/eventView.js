@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Main from './Main'
 import axios from 'axios'
 import EventMap from './eventMap'
+import {Link} from 'react-router-dom';
 
 class EventView extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class EventView extends React.Component {
       eventUsers: []
     }
     let eventId = this.props.match.params.id
-    axios.get(`/api/events/${eventId}`)
+    axios.patch(`/api/events/${eventId}`)
       .then((eventViewer) => {
         this.setState({eventV: eventViewer.data})
       })
@@ -32,7 +33,7 @@ class EventView extends React.Component {
   }
   renderMessage(message, key) {
     return (
-      <div>
+      <div key={key}>
       <h3>{message.title}</h3>
       <p>{message.body}</p>
       &nbsp;
@@ -41,9 +42,8 @@ class EventView extends React.Component {
   }
 
   renderUser(user, key) {
-    console.log('the user',user)
     return (
-        <img style={{height:'70px', width:'70px',display:'inline'}} src={user.profile_pic} />
+        <img style={{height:'70px', width:'70px',display:'inline'}} src={user.profile_pic} key={key} />
     )
   }
 
@@ -55,7 +55,7 @@ class EventView extends React.Component {
           <img className = "container-fluid full" style={{height:'200px', width:'750px'}}
           src={this.state.eventV.event_pic} />
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
-          <button className="btn-warning centered">Edit Post</button>
+          <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning centered">Edit Post</button></Link>
           <button className="btn-danger pull-right">Delete Post</button>
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
