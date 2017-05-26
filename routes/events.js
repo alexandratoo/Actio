@@ -48,7 +48,7 @@ router.get('/:id/users', (req, res, next) => {
 });
 
 /* UPDATE */
-router.put('/:id', (req, res, next) => {
+router.patch('/:id', (req, res, next) => {
   const id = req.params.id;
   const changes = req.body;
 return knex('events')
