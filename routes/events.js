@@ -63,10 +63,20 @@ return knex('events')
 /* DELETE */
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
-return knex('events')
-.where('id', id).del()
-.then(()=> res.sendStatus(200))
-.catch((err)=> next(err))
+  knex('events_users')
+    .where('event_id',id)
+    .del()
+    .then(()=>{
+      knex('messages')
+      .where('event_id',id)
+      .del()
+      .then(()=>{
+        knex('events')
+        .where('id', id).del()
+        .then((data)=> res.json(data))
+      })
+    }).catch((err)=> next(err))
+return
 });
 
 /* LIST */
