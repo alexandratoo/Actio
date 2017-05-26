@@ -53,11 +53,13 @@ class NewEvent extends Component {
     return (
       <div className="content">
         <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-          <form role="form" method="post" onSubmit={this.handleSubmit}>
+          <form role="form" method="post" onSubmit={this.handleSubmit} className="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-1">
             <h1 className="text-center">Create Event</h1>
-            <input onChange={this.handleChange} type="text" name="name" id="eventName" className="form-control input-lg" placeholder="Event Name"/>
             <div className="row">
-              <select onChange={this.handleChange} type="text" name="cat_id" className="form-control input-lg">
+            <input onChange={this.handleChange} type="text" name="name" id="eventName" className="form-control input-lg" placeholder="Event Name"/>
+            </div>
+            <div className="row">
+              <select onChange={this.handleChange} type="text" name="cat_id" className="form-control input-lg" style={{marginTop:"5px"}}>
                 <option defaultValue>Choose Category</option>
                 <option value="1">Basketball</option>
                 <option value="2">Hiking</option>
@@ -68,7 +70,7 @@ class NewEvent extends Component {
               </select>
             </div>
             <div className="row">
-              <select onChange={this.handleChange} type="text" name="skill_level" id="newEventSkill" className="form-control input-lg">
+              <select onChange={this.handleChange} type="text" name="skill_level" id="newEventSkill" className="form-control input-lg" style={{marginTop:"5px"}}>
                 <option defaultValue>Choose Skill Level</option>
                 <option value="beginner">Beginner</option>
                 <option value="intermediate">Intermediate</option>
@@ -77,19 +79,19 @@ class NewEvent extends Component {
               </select>
             </div>
             <div className="row">
-              <input onChange={this.handleChange} type="text" name="event_pic" id="newEventPic" className="form-control input-lg" placeholder="Event Picture URL"/>
+              <input onChange={this.handleChange} type="text" name="event_pic" id="newEventPic" className="form-control input-lg" style={{marginTop:"5px"}} placeholder="Event Picture URL"/>
             </div>
             <div className="row">
-              <input onChange={this.handleChange} type="date" name="event_date" id="newEventDate" className="form-control input-lg"/>
+              <input onChange={this.handleChange} type="date" name="event_date" id="newEventDate" className="form-control input-lg" style={{marginTop:"5px"}}/>
             </div>
             <div className="row">
-              <input onChange={this.handleChange} type="text" name="description" id="newEventDesc" className="form-control input-lg" placeholder="Event Description"/>
+              <input onChange={this.handleChange} type="text" name="description" id="newEventDesc" className="form-control input-lg" placeholder="Event Description" style={{marginTop:"5px"}}/>
             </div>
             <div className="row">
-              <input onChange={this.handleChange} type="text" name="location" id="newEventLocal" className="form-control input-lg" placeholder="Event Location"/>
+              <input onChange={this.handleChange} type="text" name="location" id="newEventLocal" className="form-control input-lg" placeholder="Event Location" style={{marginTop:"5px"}}/>
             </div>
             <div className="row btnrow">
-              <div className="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="CREATE EVENT" className="siteBtn btn btn-block btn-lg"/></div>
+              <div className="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="CREATE EVENT" className="siteBtn btn btn-block btn-lg" style={{marginTop:"5px"}}/></div>
             </div>
           </form>
         </div>
