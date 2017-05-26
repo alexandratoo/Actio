@@ -30,7 +30,7 @@ export default class Nav extends Component {
        </a>
 
             <ul className="nav navbar-nav">
-              <li className="li"><Link to="/">Home</Link></li>
+              <li className="li"><Link to="/">Sign Out</Link></li>
               <li className="li"><Link to={`/users/${this.state.userId}`}>My Profile</Link></li>
               <li className="li"><Link to="/events">Find Events</Link></li>
               <li className="li"><Link to="/create">Create Event</Link></li>
