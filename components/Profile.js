@@ -27,12 +27,14 @@ class Profile extends React.Component{
 
   render(){
     return(
-      <div className = "profilePic">
+      <div className = "row profilePic">
         <Nav />
-        <div>
+        <div id="profCSS" className="col-lg-12">
         <img id="proPic" className="img-fluid proPic col-md-2 col-xs-6 col-sm-2" src={this.state.currentUser.profile_pic} />
+      </div>
         <h1 className="text-center name">{this.state.currentUser.first_name} {this.state.currentUser.last_name}'s Events</h1>
-        </div>
+
+
         <UserEvents userId={this.props.match.params.id} />
         <Footer />
       </div>

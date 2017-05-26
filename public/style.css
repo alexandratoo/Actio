@@ -291,6 +291,8 @@ h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 50px;
   color:black;
+  position:relative;
+  bottom:150px;
 }
 
 #signIn {
@@ -334,7 +336,6 @@ h1 {
   background-color: black;
 }
 
-
 .proPic {
   image-orientation: center;
   -webkit-background-size: cover;
@@ -377,7 +378,13 @@ h1 {
   position:relative;
   right:38%;
 }
-
+#profCSS{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+#allEvents{
+  padding-top:80px;
+}
 #signup{
   position:relative;
   left:23%;
@@ -394,11 +401,17 @@ h1 {
   background-color: black
 }
 
+.img-fluid.proPic.col-md-2.col-xs-6.col-sm-2{
+  padding-left:0px;
+  position:relative;
+  bottom:50px;
+}
 
 #proPic{
   border-radius:25px;
   width:200px;
   height: auto;
+}
 
 /*forms*/
 

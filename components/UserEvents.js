@@ -27,7 +27,7 @@ class UserEvents extends Component {
 
   render() {
     return (
-      <div>
+      <div id="allEvents">
         <div className="row">
           {this.state.eventList.map((event, index) => {
             return (
