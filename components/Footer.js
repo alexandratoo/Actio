@@ -26,7 +26,7 @@ export default class Footer extends Component {
                 <div style={phantom} />
                 <div style={style}>
                     {this.props.children}
-                    <p class="footText text-right">&copy; ACTIO Crew John Gallagher, Alexandra Tooley, Ryhs Goehring, Sean Kelly </p>
+                    <p className="footText text-right">&copy; ACTIO Crew John Gallagher, Alexandra Tooley, Ryhs Goehring, Sean Kelly, and Samuel Miller </p>
                 </div>
             </div>
     );

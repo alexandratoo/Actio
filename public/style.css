@@ -181,10 +181,22 @@ h1 {
 }
 #messageButton{
   margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px
 }
 
 #messageId{
-  margin-bottom: 25px;
+  margin-bottom: 25px
+}
+
+.well{
+  background-color: f2f2f2
+}
+
+.eventPic{
+  width: 300px;
+  height: auto;
+  border-radius: 25px;
 }
 
 .page-one-pg {
