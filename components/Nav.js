@@ -13,7 +13,7 @@ export default class Nav extends Component {
 
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/Profile">My Profile</Link></li>
+              <li><Link to="/users/1">My Profile</Link></li>
               <li><Link to="/events">Find Events</Link></li>
             </ul>
           </div>

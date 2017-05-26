@@ -37,9 +37,10 @@ class UserEvents extends Component {
           <h1 className="text-center">My Events</h1>
           {this.state.eventList.map((event, index) => {
             return (
-              <div key={index} className="well well-lg">
+              <div className="container">
+              <div key={index} className="well">
                 <div className="media-left">
-                  <img src={event.event_pic} className="media-object"/>
+                  <img style={{height:'200px', width:'300'}}src={event.event_pic} className="media-object"/>
                 </div>
                 <div className="media-body">
                   <h4 className="media-heading text-center">
@@ -67,9 +68,10 @@ class UserEvents extends Component {
                   </ToggleDisplay>
                 </div>
               </div>
+              </div>
             )
           })}
-        </div> 
+        </div>
       </div>
     )
   }
