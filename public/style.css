@@ -185,7 +185,6 @@ h1 {
 }
 #messageButton{
   margin-top: 10px;
-  margin-left: 10px;
   border-radius: 10px
 }
 
@@ -198,7 +197,9 @@ h1 {
 }
 
 .eventPic{
-  width: 300px;
+  image-orientation: center;
+  max-width: 300px;
+  width: auto;
   height: auto;
   border-radius: 25px;
 }
@@ -235,6 +236,7 @@ h1 {
 .name {
   font-family: 'Raleway', sans-serif;
   font-size: 50px;
+  color:black;
 }
 
 #signIn{
@@ -277,4 +279,25 @@ opacity: 0.9
 
 .navbar{
   background-color: black;
+}
+
+.proPic {
+  image-orientation: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display: block;
+}
+
+.eventUser {
+  border-radius: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.eventDiv {
+  margin-top: 20px;
 }
