@@ -92,7 +92,7 @@ class EventForm extends Component {
           </select>
         </div>
         <div className="row">
-          <div className="container">
+          <div className="container mapMarg">
             <EventMap />
           </div>
         </div>

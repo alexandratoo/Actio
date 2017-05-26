@@ -67,7 +67,9 @@ class EventView extends React.Component {
           <button onClick={this.handleDelete} className="btn-danger pull-right">Delete Post</button>
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
+          <div className="mapMarg">
           <EventMap />
+        </div>
           <h2 className = "messages text-center">Attending:</h2>
           <div style={{display:'center', marginLeft:'500px'}}>{this.state.eventUsers.map(this.renderUser)}</div>
           <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className = "text-center">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;

@@ -29,7 +29,7 @@ class UserEvents extends Component {
     return (
       <div>
         <div className="row text-center">
-          <div className="container text-center">
+          <div className="container text-center mapMarg">
             <EventMap />
           </div>
         </div>

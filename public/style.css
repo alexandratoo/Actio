@@ -34,7 +34,7 @@ h2 {
 
       font-size: 60px;
 
-      color: #242330;
+      color: white;
 }
 .row-center {
   text-align: center;
@@ -46,11 +46,8 @@ h3 {
   font-size: 30px;
 }
 h1{
-  text-shadow:
-    -0.5px -0.5px 0 #fff,
-    0.5px -0.5px 0 #fff,
-    -0.5px 0.5px 0 #fff,
-    0.5px 0.5px 0 #fff;
+color: white;
+opacity: 0.8
 }
 a {
   color: #00B7FF;
@@ -244,7 +241,8 @@ h1 {
 }
 
 #title{
-color: #fff
+color: #fff;
+opacity: 0.9
 }
 
 #sub{
@@ -259,4 +257,14 @@ color: #fff
 .myEventsDiv{
   background-color: black;
   opacity: 0.5;
+}
+
+.blurb{
+  color: #d9d9d9;
+  opacity: 0.7
+}
+
+.mapMarg{
+  margin-top: 20px;
+  margin-bottom: 20px
 }
