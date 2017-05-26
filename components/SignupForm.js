@@ -47,60 +47,60 @@ class SignupForm extends Component {
       <div className="content">
               <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
                   <form role="form" method="post" onSubmit={this.handleSubmit}>
-                      <h1 className="signupTitle text-center">Signup</h1>
+                      <h1 className="signupTitle text-center">Sign Up</h1>
                       <input
                         onChange={this.handleChange}
                         type="text"
                         name="first_name"
                         id="firstName"
-                        className="form-control input-lg"
+                        className="form-control input-lg inputMarg"
                         placeholder="First Name" />
                       <input
                         onChange={this.handleChange}
                         type="text"
                         name="last_name"
                         id="lastName"
-                        className="form-control input-lg"
+                        className="form-control input-lg inputMarg"
                         placeholder="Last Name"
                          />
-                      <div class="row">
+                      <div className="row">
                         <input
                           onChange={this.handleChange}
                           type="text"
                           name="zip"
                           id="zip"
-                          className="form-control input-lg"
+                          className="form-control input-lg inputMarg"
                           placeholder="Zipcode" />
                       </div>
-                      <div class="row">
+                      <div className="row">
                         <input
                           onChange={this.handleChange}
                           type="text"
                           name="email"
                           id="email"
-                          className="form-control input-lg"
+                          className="form-control input-lg inputMarg"
                           placeholder="Email Address" />
                       </div>
-                      <div class="row">
+                      <div className="row">
                         <input
                             onChange={this.handleChange}
                             type="password"
                             name="password"
                             id="password"
-                            className="form-control input-lg"
+                            className="form-control input-lg inputMarg"
                             placeholder="Password" />
                       </div>
-                      <div class="row">
+                      <div className="row">
                         <input
                           onChange={this.handleChange}
                           type="text"
                           name="profile_pic"
                           id="photo"
-                          className="photoBtn"
-                          placeholder="Profile Image URL" />
+                          className="photoBtn form-control input-lg inputMarg"
+                          placeholder="Image" />
                       </div>
-                      <div class="row btnrow">
-                          <div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="SIGN UP" className="siteBtn btn  btn-block btn-lg" tabindex="12" /></div>
+                      <div className="row btnrow">
+                          <div className="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="SIGN UP" className="siteBtn btn  btn-block btn-lg btn-primary" tabIndex="12" /></div>
                       </div>
                   </form>
               </div>
