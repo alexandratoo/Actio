@@ -56,7 +56,7 @@ class SignIn extends Component{
           <input id="signIn" onChange={this.handleChange}name="email" placeholder = " email" type="text" />
           <input id="password" onChange={this.handleChange}name="password" placeholder=" password"type="password"/>
           <hr/>
-          <input id="sub" type="submit" value = 'Sign In!'className='btn-custom shine' />
+          <input id="sub" type="submit" value = 'Sign In!'className='btn-custom' />
 
 
         </form>
