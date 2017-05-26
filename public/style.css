@@ -437,3 +437,10 @@ h1 {
   margin-left: 10px;
 }
 /*main*/
+
+.IMGe{
+  display: inline;
+  border-radius: 15px;
+margin-left: 38%;
+margin-top: 20px
+}

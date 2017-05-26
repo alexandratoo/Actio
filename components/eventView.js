@@ -61,8 +61,8 @@ class EventView extends React.Component {
       <div>
         <Nav />
           <div className = "card-block trip container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-          <img className = "img-fluid full col-md-12 col-lg-12 col-sm-12"
-          style={{display:'block', maxHeight: '300px'}}src={this.state.eventV.event_pic} />
+          <img className = "img-fluid IMGe"
+          style={{display:'block', width: '300px',height:"auto"}}src={this.state.eventV.event_pic} />
           <div className="cardContent text-center col-lg-12 col-md-12">
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
           <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning pull-left">Edit Post</button></Link>
