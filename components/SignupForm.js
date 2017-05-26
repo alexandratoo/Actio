@@ -47,7 +47,10 @@ class SignupForm extends Component {
       <div className="formInput">
               <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
                   <form role="form" method="post" onSubmit={this.handleSubmit}>
+                  <div className='row'>
                       <h1 className="signupTitle text-center">Sign Up</h1>
+                      </div>
+                      <div className='row'>
                       <input
                         onChange={this.handleChange}
                         type="text"
@@ -55,6 +58,8 @@ class SignupForm extends Component {
                         id="firstName"
                         className="form-control input-lg inputMarg"
                         placeholder="First Name" />
+                        </div>
+                        <div className='row'>
                       <input
                         onChange={this.handleChange}
                         type="text"
@@ -63,6 +68,7 @@ class SignupForm extends Component {
                         className="form-control input-lg inputMarg"
                         placeholder="Last Name"
                          />
+                         </div>
                       <div className="row">
                         <input
                           onChange={this.handleChange}
