@@ -15,6 +15,7 @@ class UserEvents extends Component {
     }
     let userId = this.props.userId;
     axios.get(`/api/users/${userId}/events`).then((events) => {
+      console.log(events);
       this.setState({eventList: events.data})
     })
   }
@@ -31,8 +32,8 @@ class UserEvents extends Component {
         <div className="row">
           {this.state.eventList.map((event, index) => {
             return (
-              <div className="card-block trip container col-md-10 col-sm-4 col-xs-8 col-lg-8 col-xs-offset-2 col-lg-offset-2 col-md-offset-2">
-                <div key={index} className="cardContent text-center">
+              <div key={index} className="card-block trip container col-md-10 col-sm-4 col-xs-8 col-lg-8 col-xs-offset-2 col-lg-offset-2 col-md-offset-2">
+                <div className="cardContent text-center">
                   <div className="media-center eventDiv">
                     <img src={event.event_pic} className="img-fluid center eventPic"/>
                   </div>

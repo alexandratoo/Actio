@@ -29,6 +29,18 @@ exports.seed = function(knex) {
         title: 'Just bought a new 9 iron!',
         body: "Yay!",
         event_id: 3
+      },
+      {
+        id: 6,
+        title: 'Sam I am',
+        body: "I hope this is a good time.",
+        event_id: 4
+      },
+      {
+        id: 7,
+        title: 'Maybe we can go to trivia later.',
+        body: "That would be awesome.",
+        event_id: 6
       }
     ]);
   }).then(() => {

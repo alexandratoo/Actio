@@ -42,17 +42,17 @@ exports.seed = function(knex) {
                     user_id: 1
                 },
                 {
-                    id: 8,
+                    id: 10,
                     event_id: 10,
                     user_id: 3
                 },
                 {
-                    id: 8,
+                    id: 11,
                     event_id: 11,
                     user_id: 1
                 },
                 {
-                    id: 8,
+                    id: 12,
                     event_id: 12,
                     user_id: 1
                 }
