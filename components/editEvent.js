@@ -63,7 +63,6 @@ class EditEvent extends Component {
     const obj = {}
     obj[event.target.name] = event.target.value;
     this.setState(obj);
-    console.log('state is..', this.state)
   }
 
   render() {

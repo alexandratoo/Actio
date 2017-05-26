@@ -13,13 +13,14 @@ class EventForm extends Component {
       zip:'',
       currentUser: null,
       categories: [],
-      selectedCategory: null,
+      selected_category: 1,
       skill_levels: [],
-      selected_skill_level: null,
+      selected_skill_level: 'beginner',
       distances: [],
-      selected_distance: null,
+      selected_distance: '5',
       displayed_events: null,
       events: [],
+      filteredEvents: [],
       selected_event: null
     }
 
@@ -34,13 +35,20 @@ class EventForm extends Component {
 
     this.joinEvent = this.joinEvent.bind(this);
     this.parseCookie = this.parseCookie.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
-
-  }
-
-  filterEvents() {
+    console.log(this.props);
 
   }
+
+  handleChange(event) {
+    const obj = {}
+    obj[event.target.name] = event.target.value;
+    this.setState(obj);
+  }
+
+
+
   joinEvent(id){
     console.log('user id', this.state.userId);
     axios.post(`/api/events/${id}`, {userId:this.state.userId})
@@ -65,26 +73,27 @@ class EventForm extends Component {
 
   renderCats(category, key) {
     return (
-      <option key={key}>
+      <option value={category.id} key={key}>
         {category.title}
       </option>
     )
   }
 
   render() {
+
     return (
       <div className="container">
         <div className="row">
-          <select name="catSelect" className="col-sm-4">
+          <select onChange={this.handleChange} name="selected_category" className="col-sm-4">
             {this.state.categories.map(this.renderCats)}
           </select>
-          <select name="skillSelect" className="col-sm-4">
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-            <option value="Master">Master</option>
+          <select onChange={this.handleChange} name="selected_skill_level" className="col-sm-4">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+            <option value="master">Master</option>
           </select>
-          <select name="distance" className="col-sm-4">
+          <select onChange={this.handleChange}name="selected_distance" className="col-sm-4">
             <option value="5">5 Miles</option>
             <option value="10">10 Miles</option>
             <option value="20">20 Miles</option>
@@ -99,6 +108,7 @@ class EventForm extends Component {
         <div className="row">
           <h1 className="text-center">Events For You</h1>
           {this.state.events.map((event, index) => {
+            if (event.cat_id == this.state.selected_category && event.skill_level == this.state.selected_skill_level) {
             return (
               <div key={index} className="well well-lg">
                 <div className="media-left">
@@ -115,7 +125,7 @@ class EventForm extends Component {
                   <button onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
                 </div>
               </div>
-            )
+            )}
           })}
         </div>
       </div>
