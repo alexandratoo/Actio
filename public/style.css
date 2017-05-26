@@ -23,16 +23,12 @@ body::before {
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      -webkit-filter: blur(1px);
-      -moz-filter: blur(1px);
-      -o-filter: blur(1px);
-      -ms-filter: blur(1px);
-      filter: blur(1px);
-  background-size: cover;
+
+
   overflow: auto;
   margin-bottom: : -50px;
   padding: 0%;
-  opacity: 0.4%;
+
 }
 
 
