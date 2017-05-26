@@ -15,14 +15,14 @@ body::before {
   content: '';
   z-index: -1;
   width: 100%;
-  height: 120%;
-  position: absolute;
+  height: 200%;
+  position: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   overflow: auto;
-  margin: 0%;
+  margin-bottom: : -50px;
   padding: 0%;
 }
 /*main {

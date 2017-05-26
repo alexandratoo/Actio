@@ -60,7 +60,7 @@ class EventView extends React.Component {
       <div>
         <Nav />
           <div className = "card-block trip container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-          <img className = "container-fluid full" style={{height:'200px', width:'750px'}}
+          <img className = "container-fluid full col-md-offset-2" style={{height:'200px', width:'750px'}}
           src={this.state.eventV.event_pic} />
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
           <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning centered">Edit Post</button></Link>
@@ -69,8 +69,8 @@ class EventView extends React.Component {
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
           <EventMap />
           <h2 className = "messages text-center">Attending:</h2>
-          {this.state.eventUsers.map(this.renderUser)}
-          <h2 className = "messages text-center">Messages:</h2> &nbsp; <div >{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
+          <div style={{display:'center', marginLeft:'500px'}}>{this.state.eventUsers.map(this.renderUser)}</div>
+          <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className = "text-center">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
           <button className="waves-effect waves-light btn-primary centered">Add a message</button>
 
           </div>
