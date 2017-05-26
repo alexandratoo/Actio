@@ -60,19 +60,20 @@ class EventView extends React.Component {
       <div>
         <Nav />
           <div className = "card-block trip container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-          <img className = "container-fluid full col-md-offset-2" style={{height:'200px', width:'750px'}}
-          src={this.state.eventV.event_pic} />
+          <img className = "img-fluid full col-md-12 col-lg-12 col-sm-12"
+          style={{display:'block', maxHeight: '300px'}}src={this.state.eventV.event_pic} />
+          <div className="cardContent text-center col-lg-12 col-md-12">
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
-          <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning centered">Edit Post</button></Link>
+          <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning pull-left">Edit Post</button></Link>
           <button onClick={this.handleDelete} className="btn-danger pull-right">Delete Post</button>
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
           <EventMap />
           <h2 className = "messages text-center">Attending:</h2>
-          <div style={{display:'center', marginLeft:'500px'}}>{this.state.eventUsers.map(this.renderUser)}</div>
+          <div style={{display:'fixed'}}>{this.state.eventUsers.map(this.renderUser)}</div>
           <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className = "text-center">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
           <button className="waves-effect waves-light btn-primary centered">Add a message</button>
-
+          </div>
           </div>
       </div>
     )
