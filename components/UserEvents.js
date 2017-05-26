@@ -34,7 +34,9 @@ class UserEvents extends Component {
           </div>
         </div>
         <div className="row">
-          <h1 className="text-center">My Events</h1>
+          <div className="myEventsDiv">
+          <h2 className="text-center myEvents">My Events</h2>
+        </div>
           {this.state.eventList.map((event, index) => {
             return (
               <div className="container">
