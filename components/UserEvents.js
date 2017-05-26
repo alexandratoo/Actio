@@ -56,14 +56,14 @@ class UserEvents extends Component {
                 </div>
                 </div>
                 <div>
-                <button id="messageButton" onClick={() => this.handleClick()}>Messages</button>
+                <button className='btn-custom messageButton' id="messageButton" onClick={() => this.handleClick()}>Messages</button>
               </div>
               <hr/>
                 <div>
                   <ToggleDisplay show={this.state.click}>
                     {event.messages.map((message, index2) => {
                       return (
-                        <div key={index2}>
+                        <div key={index2} className="border-bottom-0">
                           <h4>{message.title}</h4>
                           <p id="messageId">{message.body}</p>
                         </div>
