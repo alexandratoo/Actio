@@ -15,6 +15,16 @@ router.post('/', (req, res, next) => {
   .catch((err)=> next(err));
 });
 
+router.post('/:id',(req,res,next) =>{
+  const userId = req.body.userId;
+  const id = req.params.id;
+  console.log('adding', userId, "to", id);
+  knex('events_users')
+    .insert({event_id:id,user_id:userId})
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+})
+
 /* READ */
 router.get('/:id', (req, res, next) => {
   console.log('here');

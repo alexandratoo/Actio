@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import EventMap from './eventMap';
 import { Link } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class EventForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      userId:'',
+      zip:'',
       currentUser: null,
       categories: [],
       selectedCategory: null,
@@ -28,10 +31,36 @@ class EventForm extends Component {
     axios.get('/api/events/').then((response) => {
       this.setState({events: response.data})
     });
+
+    this.joinEvent = this.joinEvent.bind(this);
+    this.parseCookie = this.parseCookie.bind(this);
+
+
   }
 
   filterEvents() {
 
+  }
+  joinEvent(id){
+    console.log('user id', this.state.userId);
+    axios.post(`/api/events/${id}`, {userId:this.state.userId})
+    .then((data)=>{
+      this.props.history.push(`/events/${id}`);
+    })
+  }
+
+  parseCookie(cookie){
+
+    let cookieArray = cookie.split('; ')
+    let cookieObject = {}
+    cookieArray.forEach((element)=>{
+      let current = element.split('=');
+      cookieObject[current[0]] = current[1];
+    })
+    this.setState({userId:cookieObject.userId,zip:cookieObject.zip});
+  }
+  componentDidMount(){
+    this.parseCookie(document.cookie);
   }
 
   renderCats(category, key) {
@@ -83,6 +112,7 @@ class EventForm extends Component {
                   </div>
                   <br />
                   <p className="text-left">{event.description}</p>
+                  <button onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
                 </div>
               </div>
             )
@@ -93,4 +123,4 @@ class EventForm extends Component {
   }
 }
 
-export default EventForm
+export default withRouter(EventForm)
