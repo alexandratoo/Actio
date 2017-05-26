@@ -101,7 +101,7 @@ class EventForm extends Component {
           </select>
         </div>
         <div className="row">
-          <div className="container">
+          <div className="container mapMarg">
             <EventMap />
           </div>
         </div>
@@ -122,7 +122,7 @@ class EventForm extends Component {
                   </div>
                   <br />
                   <p className="text-left">{event.description}</p>
-                  <button onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
+                  <button className='btn-custom' onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
                 </div>
               </div>
             )}
