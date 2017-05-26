@@ -264,7 +264,7 @@ h1 {
   width: auto;
 }
 
-.page-one-pg {
+/*.page-one-pg {
   background: url("./images/redClimber.jpg");
   content: '';
   z-index: -1;
@@ -278,8 +278,8 @@ h1 {
   overflow: auto;
   margin: 0%;
   padding: 0%;
-  
-}
+
+}*/
 
 .profilePic {
   background: url("./images/IMG_3983.jpg") no-repeat center center fixed;
