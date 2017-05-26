@@ -44,10 +44,13 @@ class SignupForm extends Component {
   }
   render(){
     return (
-      <div className="content">
+      <div className="formInput">
               <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
                   <form role="form" method="post" onSubmit={this.handleSubmit}>
+                  <div className='row'>
                       <h1 className="signupTitle text-center">Sign Up</h1>
+                      </div>
+                      <div className='row'>
                       <input
                         onChange={this.handleChange}
                         type="text"
@@ -55,6 +58,8 @@ class SignupForm extends Component {
                         id="firstName"
                         className="form-control input-lg inputMarg"
                         placeholder="First Name" />
+                        </div>
+                        <div className='row'>
                       <input
                         onChange={this.handleChange}
                         type="text"
@@ -63,6 +68,7 @@ class SignupForm extends Component {
                         className="form-control input-lg inputMarg"
                         placeholder="Last Name"
                          />
+                         </div>
                       <div className="row">
                         <input
                           onChange={this.handleChange}
@@ -100,7 +106,7 @@ class SignupForm extends Component {
                           placeholder="Image" />
                       </div>
                       <div className="row btnrow">
-                          <div className="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="SIGN UP" className="siteBtn btn  btn-block btn-lg btn-primary" tabIndex="12" /></div>
+                          <div className="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 "><input type="submit" value="SIGN UP" className="siteBtn btn  btn-block btn-lg btn-default" tabIndex="12" /></div>
                       </div>
                   </form>
               </div>

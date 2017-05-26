@@ -394,8 +394,24 @@ h1 {
   background-color: black
 }
 
+
 #proPic{
   border-radius:25px;
   width:200px;
   height: auto;
+
+/*forms*/
+
+.card-block {
+    border-radius: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color:#080707;
+}
+
+.formInput {
+    width: 80%;
+    display: block;
+    margin: auto;
 }
