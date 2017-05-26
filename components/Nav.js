@@ -30,9 +30,9 @@ export default class Nav extends Component {
        </a>
 
             <ul className="nav navbar-nav">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to={`/users/${this.state.userId}`}>My Profile</Link></li>
-              <li><Link to="/events">Find Events</Link></li>
+              <li className="li"><Link to="/">Home</Link></li>
+              <li className="li"><Link to={`/users/${this.state.userId}`}>My Profile</Link></li>
+              <li className="li"><Link to="/events">Find Events</Link></li>
             </ul>
           </div>
         </div>
