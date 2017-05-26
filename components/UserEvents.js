@@ -39,19 +39,21 @@ class UserEvents extends Component {
         </div>
           {this.state.eventList.map((event, index) => {
             return (
-              <div className="container">
-              <div key={index} className="well">
-                <div className="media-left">
-                  <img src={event.event_pic} className="media-object eventPic"/>
+              <div className="card-block trip container col-md-10 col-sm-4 col-xs-8 col-lg-8 col-xs-offset-2 col-lg-offset-2 col-md-offset-2">
+              <div key={index} className="cardContent text-center">
+                <div className="media-center eventDiv">
+                  <img src={event.event_pic} className="img-fluid center eventPic"/>
                 </div>
+                <div className="container text-center col-md-12 col-sm-12">
                 <div className="media-body">
-                  <h4 className="media-heading text-center">
+                  <h4 className="media-heading text-center text-overflow">
                     {event.name} at {event.event_date}</h4>
-                  <div className="text-left">
+                  <div className="text-center">
                     {event.location}
                   </div>
                   <br/>
-                  <p className="text-left">{event.description}</p>
+                  <p className="text-center">{event.description}</p>
+                </div>
                 </div>
                 <div>
                 <button id="messageButton" onClick={() => this.handleClick()}>Messages</button>

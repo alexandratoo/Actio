@@ -215,7 +215,6 @@ h1 {
 
 #messageButton {
   margin-top: 10px;
-  margin-left: 10px;
   border-radius: 10px
 }
 
@@ -227,10 +226,10 @@ h1 {
   background-color: f2f2f2
 }
 
-.eventPic {
-  width: 300px;
-  height: auto;
-  border-radius: 25px;
+.eventPic{
+  image-orientation: center;
+  max-width: 300px;
+  width: auto;
 }
 
 .page-one-pg {
@@ -266,6 +265,7 @@ h1 {
 .name {
   font-family: 'Raleway', sans-serif;
   font-size: 50px;
+  color:black;
 }
 
 #signIn {
@@ -309,20 +309,24 @@ h1 {
   background-color: black;
 }
 
-/*buttons*/
-.btn-custom {
-  background-color: hsl(0, 0%, 79%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#134134134", endColorstr="#c9c9c9");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#134134134), to(#c9c9c9));
-  background-image: -moz-linear-gradient(top, #134134134, #c9c9c9);
-  background-image: -ms-linear-gradient(top, #134134134, #c9c9c9);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #134134134), color-stop(100%, #c9c9c9));
-  background-image: -webkit-linear-gradient(top, #134134134, #c9c9c9);
-  background-image: -o-linear-gradient(top, #134134134, #c9c9c9);
-  background-image: linear-gradient(#134134134, #c9c9c9);
-  border-color: #c9c9c9 #c9c9c9 hsl(0, 0%, 68.5%);
-  color: #333 !important;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.69);
-  -webkit-font-smoothing: antialiased;
+.proPic {
+  image-orientation: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display: block;
+}
+
+.eventUser {
+  border-radius: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.eventDiv {
+  margin-top: 20px;
+>>>>>>> splash
 }
