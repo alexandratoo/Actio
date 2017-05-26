@@ -30,13 +30,13 @@ class EventView extends React.Component {
         console.log(users)
         this.setState({eventUsers: users.data})
       })
+    this.handleDelete = this.handleDelete.bind(this);
   }
   renderMessage(message, key) {
     return (
       <div key={key}>
       <h3>{message.title}</h3>
       <p>{message.body}</p>
-      &nbsp;
       </div>
     )
   }
@@ -45,6 +45,14 @@ class EventView extends React.Component {
     return (
         <img style={{height:'70px', width:'70px',display:'inline'}} src={user.profile_pic} key={key} />
     )
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    axios.delete(`/api/events/${this.props.match.params.id}`)
+    .then((data)=>{
+      this.props.history.push(`/events/`)
+    })
   }
 
   render() {
@@ -56,7 +64,7 @@ class EventView extends React.Component {
           src={this.state.eventV.event_pic} />
           <h2 className="text-center eventTitle" style={{display:'center', marginLeft:'25px'}}>{this.state.eventV.name}</h2>
           <Link to={`/events/${this.props.match.params.id}/edit`}><button className="btn-warning centered">Edit Post</button></Link>
-          <button className="btn-danger pull-right">Delete Post</button>
+          <button onClick={this.handleDelete} className="btn-danger pull-right">Delete Post</button>
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
           <EventMap />
