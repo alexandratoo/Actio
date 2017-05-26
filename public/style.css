@@ -332,7 +332,7 @@ h1 {
   background-color: black;
 }
 
-<<<<<<< HEAD
+
 .proPic {
   image-orientation: center;
   -webkit-background-size: cover;
@@ -390,4 +390,19 @@ h1 {
   color: white;
   padding:10px;
   background-color: black
+}
+/*forms*/
+
+.card-block {
+    border-radius: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color:#080707;
+}
+
+.formInput {
+    width: 80%;
+    display: block;
+    margin: auto;
 }
