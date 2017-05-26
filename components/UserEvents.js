@@ -56,7 +56,7 @@ class UserEvents extends Component {
                 </div>
                 </div>
                 <div>
-                <button id="messageButton" onClick={() => this.handleClick()}>Messages</button>
+                <button className='btn-custom messageButton' id="messageButton" onClick={() => this.handleClick()}>Messages</button>
               </div>
               <hr/>
                 <div>
