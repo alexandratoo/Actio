@@ -9,6 +9,7 @@ class EventForm extends Component {
     super(props);
 
     this.state = {
+      eventLocations:[],
       userId:'',
       zip:'',
       currentUser: null,
@@ -23,19 +24,24 @@ class EventForm extends Component {
       filteredEvents: [],
       selected_event: null
     }
-
+    const self = this
     axios.get('/api/categories').then((response) => {
       console.log('cookie is?', document.cookie);
       this.setState({categories: response.data})
     });
 
     axios.get('/api/events/').then((response) => {
+      console.log(response.data);
+      response.data.forEach((element)=>{
+        this.addLocation(element.location);
+      })
       this.setState({events: response.data})
     });
 
     this.joinEvent = this.joinEvent.bind(this);
     this.parseCookie = this.parseCookie.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.addLocation = this.addLocation.bind(this);
 
     console.log(this.props);
 
@@ -69,6 +75,7 @@ class EventForm extends Component {
   }
   componentDidMount(){
     this.parseCookie(document.cookie);
+    console.log(this.state.eventLocations);
   }
 
   renderCats(category, key) {
@@ -79,8 +86,14 @@ class EventForm extends Component {
     )
   }
 
-  render() {
+  addLocation(location){
+    let locArray = this.state.eventLocations;
+    locArray.push(location);
+    this.setState({eventLocations:locArray})
+  }
 
+  render() {
+    const self = this;
     return (
       <div className="container">
         <div className="row">
@@ -102,30 +115,31 @@ class EventForm extends Component {
         </div>
         <div className="row">
           <div className="container mapMarg">
-            <EventMap />
+            <EventMap locations={this.state.eventLocations} />
           </div>
         </div>
         <div className="row">
           <h1 className="text-center">Events For You</h1>
           {this.state.events.map((event, index) => {
+            console.log(event);
             if (event.cat_id == this.state.selected_category && event.skill_level == this.state.selected_skill_level) {
-            return (
-              <div key={index} className="well well-lg">
-                <div className="media-left">
-                  <img src={event.event_pic} className="media-object eventPic"/>
-                </div>
-                <div className="media-body">
-                  <h4 className="media-heading text-center">
-                    <Link to={`/events/${event.id}`}>{event.name}</Link> at {event.event_date}</h4>
-                  <div className="text-left">
-                    {event.location}
+              return (
+                <div key={index} className="well well-lg">
+                  <div className="media-left">
+                    <img src={event.event_pic} className="media-object eventPic"/>
                   </div>
-                  <br />
-                  <p className="text-left">{event.description}</p>
-                  <button className='btn-custom' onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
+                  <div className="media-body">
+                    <h4 className="media-heading text-center">
+                      <Link to={`/events/${event.id}`}>{event.name}</Link> on {event.event_date}</h4>
+                    <div className="text-left">
+                      {event.location}
+                    </div>
+                    <br />
+                    <p className="text-left">{event.description}</p>
+                    <button className='btn-custom' onClick={()=>this.joinEvent(event.id)} data-event={event.id} id="joinEventBtn">Join Event</button>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           })}
         </div>
       </div>
