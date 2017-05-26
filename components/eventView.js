@@ -5,6 +5,7 @@ import Main from './Main'
 import axios from 'axios'
 import EventMap from './eventMap'
 import {Link} from 'react-router-dom';
+import MessageForm from './messageForm.js';
 
 class EventView extends React.Component {
   constructor(props) {
@@ -69,12 +70,12 @@ class EventView extends React.Component {
           <h3 className="text-center skill" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.skill_level}</h3>
           <p className="text-center" style={{display:'block', marginLeft:'25px'}}>{this.state.eventV.description}</p>
           <div className="mapMarg">
-          <EventMap />
+
         </div>
           <h2 className = "messages text-center">Attending:</h2>
           <div style={{display:'fixed'}}>{this.state.eventUsers.map(this.renderUser)}</div>
           <h2 className = "messages text-center">Messages:</h2> &nbsp; <div className = "text-center">{this.state.eventMessages.map(this.renderMessage)}</div>&nbsp;
-          <button className="waves-effect waves-light btn-primary centered">Add a message</button>
+           <MessageForm id={this.props.match.params.id} />
           </div>
           </div>
       </div>
