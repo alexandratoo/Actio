@@ -82,8 +82,6 @@ class EventForm extends Component {
                   </div>
                   <br />
                   <p className="text-left">{event.description}</p>
-                  <a src="#" className="text-left">Delete Event</a>
-                  <a src="#" className="text-right">Edit Event</a>
                 </div>
               </div>
             )
