@@ -52,8 +52,9 @@ class EditEvent extends Component {
     newEvent.skill_level = this.state.skill_level;
     newEvent.event_pic = this.state.event_pic;
 
-    axios.post('/api/events', newEvent).then((data) => {
-      this.props.history.push(`/events/${data.data[0].id}`)
+    axios.patch(`/api/events/${this.props.match.params.id}`, newEvent).then((data) => {
+
+      this.props.history.push(`/events/${this.props.match.params.id}`)
     });
 
   }

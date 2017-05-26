@@ -15,7 +15,7 @@ class EventView extends React.Component {
       eventUsers: []
     }
     let eventId = this.props.match.params.id
-    axios.patch(`/api/events/${eventId}`)
+    axios.get(`/api/events/${eventId}`)
       .then((eventViewer) => {
         this.setState({eventV: eventViewer.data})
       })

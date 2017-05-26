@@ -52,10 +52,10 @@ router.patch('/:id', (req, res, next) => {
   const id = req.params.id;
   const changes = req.body;
 return knex('events')
-.returning('*')
 .where('id', id)
 .update(changes)
-.then(()=> res.sendStatus(200))
+.returning('id')
+.then(()=> res.json(changes))
 .catch((err)=> next (err));
 
 });
