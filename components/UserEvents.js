@@ -40,7 +40,7 @@ class UserEvents extends Component {
               <div className="container">
               <div key={index} className="well">
                 <div className="media-left">
-                  <img style={{height:'200px', width:'300'}}src={event.event_pic} className="media-object"/>
+                  <img src={event.event_pic} className="media-object eventPic"/>
                 </div>
                 <div className="media-body">
                   <h4 className="media-heading text-center">
@@ -51,8 +51,8 @@ class UserEvents extends Component {
                   <br/>
                   <p className="text-left">{event.description}</p>
                 </div>
-                <div id="messageButton">
-                <button onClick={() => this.handleClick()}>Messages</button>
+                <div>
+                <button id="messageButton" onClick={() => this.handleClick()}>Messages</button>
               </div>
               <hr/>
                 <div>
