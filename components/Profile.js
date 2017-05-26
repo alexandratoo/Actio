@@ -29,7 +29,7 @@ class Profile extends React.Component{
     return(
       <div>
         <Nav />
-        <img style={{height:'100px', width:'100px',display:'inline'}} src={this.state.currentUser.profile_pic} />
+        <img style={{marginLeft:'20px',height:'150px', width:'150px',display:'inline'}} src={this.state.currentUser.profile_pic} />
         <h1 style={{display:'inline', marginLeft:'25px'}}>{this.state.currentUser.first_name} {this.state.currentUser.last_name}</h1>
         <hr style={{borderColor:'black'}}/>
         <UserEvents userId={this.props.match.params.id} />
