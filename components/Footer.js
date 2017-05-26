@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 
 var style = {
-    backgroundColor: '#EEEEE2',
-    borderTop: "1px solid #E7E7E7",
+    backgroundColor: 'black',
+    borderTop: "1px solid black",
     textAlign: "center",
     padding: "20px",
     position: "fixed",
@@ -27,7 +27,7 @@ export default class Footer extends Component {
                 <div style={style}>
                     {this.props.children}
 
-                    <p className="footText text-right">&copy; ACTIO Crew John Gallagher, Alexandra Tooley, Ryhs Goehring, Sean Kelly, and Samuel Miller </p>
+                    <p className="footText text-center">&copy; ACTIO Crew John Gallagher, Alexandra Tooley, Ryhs Goehring, Sean Kelly, and Samuel Miller</p>
 
                 </div>
             </div>
