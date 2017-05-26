@@ -45,7 +45,7 @@ class SignupForm extends Component {
   render(){
     return (
       <div className="formInput">
-              <div className="card-block container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+              <div className="card-block form container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
                   <form role="form" method="post" onSubmit={this.handleSubmit}>
                   <div className='row'>
                       <h1 className="signupTitle text-center">Sign Up</h1>
